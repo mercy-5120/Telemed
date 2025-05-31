@@ -22,7 +22,7 @@ document.querySelectorAll(".navlinks").forEach((link) => {
   });
 
   window.addEventListener("resize", () => {
-    if (window.innerWidth > 1024) {
+    if (window.innerWidth > 1289) {
       navMenu.classList.remove("active");
     }
   });

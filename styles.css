@@ -589,6 +589,12 @@ footer .social-media {
   transition: all 0.3s ease-in-out;
 }
 
+#subscribe-form button:hover {
+  background-color: #fff;
+  color: #ed4545;
+  cursor: pointer;
+}
+
 @media (min-width: 768px) and (max-width: 1300px) {
   .Navbar .nav-links {
     position: absolute;
