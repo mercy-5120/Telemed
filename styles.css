@@ -13,16 +13,20 @@ html {
   width: 100%;
   height: auto;
   color: white;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  margin: 10px auto;
+  margin: 0 auto;
 }
 .Navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 5px 20px;
-  margin-right: 100px;
-  width: auto;
+  margin: 0 auto;
+  background-color: #0e2996;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  height: 90px;
+  z-index: 1000;
 }
 .logo img {
   width: 150px;
@@ -45,8 +49,7 @@ nav {
 
 .Navbar ul li .navlinks {
   text-decoration: none;
-  color: #000000;
-  opacity: 0.68;
+  color: #fff;
   font-weight: 600;
   padding: 10px 15px;
   font-size: 25px;
@@ -73,7 +76,7 @@ nav ul li .navlinks:hover::after {
 
 .login-button {
   text-decoration: none;
-  background-color: #3758dd;
+  background-color: #ed4545;
   padding: 15px 80px;
   color: white;
   font-weight: 600;
@@ -82,15 +85,25 @@ nav ul li .navlinks:hover::after {
 }
 
 .login-button:hover {
-  background-color: #ed4545;
-  color: white;
+  background-color: #fff;
+  color: #ed4545;
   transition: all 0.3s ease-in-out;
 }
 
+#hamburger,
+#close {
+  font-size: 34px;
+  cursor: pointer;
+  display: none;
+}
+
+#close {
+  margin-left: -205px;
+}
 .hero-section {
   width: 90%;
   height: 750px;
-  margin: 0 auto;
+  margin: 100px auto;
   border-radius: 50px;
   background-image: url("images/hero.jpg");
   background-size: cover;
@@ -374,9 +387,10 @@ form textarea:focus {
 }
 
 footer {
-  background-color: #3758dd;
+  background-color: #0e2996;
   display: flex;
   padding: 30px;
+  width: 100%;
 }
 
 footer .social-media {
@@ -575,7 +589,41 @@ footer .social-media {
   transition: all 0.3s ease-in-out;
 }
 
-@media  (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1024px) {
+  .Navbar .nav-links {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    background-color: #0e2996;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+  }
+
+  .nav-links ul {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .Navbar #hamburger {
+    display: block;
+    color: white;
+  }
+
+  .Navbar .nav-links ul li {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .Navbar .nav-links.show {
+    display: flex;
+  }
+
+  .login-button {
+    display: none;
+  }
   .book-btn {
     border-radius: 70px;
   }
@@ -629,10 +677,6 @@ footer .social-media {
     background-size: cover;
     background-position: center;
     border-radius: 20px;
-  }
-
-  footer .social-media {
-    margin-left: 10px;
   }
 
   .footer-logo {
@@ -695,15 +739,60 @@ footer .social-media {
 }
 
 @media (max-width: 768px) {
+  .main-container {
+    margin: 0;
+  }
+  .Navbar {
+    width: 100%;
+  }
+  .logo img {
+    width: 100px;
+    height: auto;
+  }
+  .Navbar .nav-links {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    background-color: #0e2996;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+  }
+
+  .nav-links ul {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .Navbar #hamburger {
+    display: block;
+    color: white;
+  }
+
+  .Navbar .nav-links ul li {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .Navbar .nav-links.show {
+    display: flex;
+  }
+
+  .login-button {
+    display: none;
+  }
   .hero-section {
-    height: 500px;
+    width: 90%;
+    height: 100%;
+    padding: 20px;
+    margin: 100px auto;
   }
 
   .msg-container {
     width: 100%;
     margin-left: 0;
-    align-items: center;
-    text-align: center;
   }
 
   .msg-container h6,
@@ -711,9 +800,11 @@ footer .social-media {
   .msg-container .description {
     padding: 10px;
   }
-
+  .msg-container .main-hero {
+    font-size: 40px;
+  }
   .book-btn {
-    width: 80%;
+    width: 100%;
     padding: 10px;
     font-size: 16px;
     border-radius: 50px;
@@ -723,6 +814,7 @@ footer .social-media {
     flex-direction: column-reverse;
     align-items: center;
     margin-bottom: 20px;
+    margin-top: -80px;
   }
 
   .about-section .about-content {
@@ -738,3 +830,156 @@ footer .social-media {
     background-position: center;
     border-radius: 20px;
   }
+
+  .about-section .about-content h2 {
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .about-section .about-content p {
+    padding: 10px;
+    font-size: 12px;
+    text-align: left;
+  }
+  .services-section {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+  }
+
+  .services-section h2 {
+    font-size: 30px;
+    text-align: center;
+    margin-left: 0;
+  }
+
+  .service-cards {
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
+
+  .card {
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+
+  .card img {
+    width: 100%;
+    height: 200px;
+    border-radius: 20px;
+  }
+
+  .contact-section {
+    flex-direction: column-reverse;
+    width: 100%;
+    margin-top: 10px;
+    padding: 20px;
+  }
+
+  .form-container {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    margin-top: -103px;
+  }
+
+  .cont-img {
+    width: 100%;
+    height: 300px;
+    background-image: url("images/contact.jpg");
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+
+  .cont-img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+  }
+
+  footer {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  footer .social-media {
+    margin-left: 0;
+  }
+
+  .footer-logo {
+    width: 100px;
+    height: auto;
+  }
+
+  .social-media p {
+    width: 100%;
+    font-size: 20px;
+    text-align: center;
+    margin-top: -30px;
+  }
+
+  .social-media h4 {
+    margin-left: 20px;
+  }
+
+  .social-icons {
+    gap: 30px;
+    margin-left: 20px;
+  }
+
+  .join {
+    width: 200px;
+    height: 50px;
+    font-size: 16px;
+    margin-left: 20px;
+  }
+
+  .others {
+    margin-left: 0;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .contact-details h4,
+  .subscribe h4,
+  .quick-links h4,
+  .quick-links ul li {
+    font-size: 14px;
+  }
+
+  .contact-details p,
+  .detail p {
+    font-size: 12px;
+  }
+
+  .subscribe p {
+    font-size: 10px;
+  }
+  #subscribe-form {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+  #subscribe-form input {
+    width: 100%;
+    height: 40px;
+    font-size: 14px;
+  }
+
+  #subscribe-form button {
+    width: 70%;
+    height: 40px;
+    font-size: 14px;
+    margin-left: -80px;
+  }
+}

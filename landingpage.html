@@ -10,6 +10,13 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
     <div class="main-container">
@@ -17,17 +24,27 @@
         <div class="logo">
           <img src="images/logo.png" alt="Telecure Logo" />
         </div>
-        <nav>
-          <ul>
+
+        
+        <nav class="nav-links" id="nav-links">
+          <ul class=>
             <li><a href="#home" class="navlinks">HOME</a></li>
             <li><a href="#about" class="navlinks">ABOUT</a></li>
             <li><a href="#services" class="navlinks">SERVICES</a></li>
             <li><a href="#contact" class="navlinks">CONTACT</a></li>
           </ul>
         </nav>
+        
+
         <a href="login.html" class="login-button">LOGIN</a>
+             
+          <i class="fas fa-bars" id="hamburger"></i>
+          <i class="fas fa-times" id="close"></i>
+      
+        
       </div>
 
+      
       <div class="hero-section" id="home">
         <div class="msg-container">
           <h6>Welcome to Telecure</h6>
@@ -228,5 +245,7 @@
         </div>
       </footer>
     </div>
+
+    <script src="script.js"></script>
   </body>
 </html>
