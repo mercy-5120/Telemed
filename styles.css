@@ -589,7 +589,7 @@ footer .social-media {
   transition: all 0.3s ease-in-out;
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1300px) {
   .Navbar .nav-links {
     position: absolute;
     top: 50px;
@@ -704,6 +704,10 @@ footer .social-media {
     gap: 0px;
   }
 
+  .contact-details {
+    margin-left: 50px;
+  }
+
   .contact-details h4,
   .subscribe h4,
   .quick-links h4,
@@ -734,11 +738,11 @@ footer .social-media {
     width: 70%;
     height: 50px;
     font-size: 14px;
-    margin-left: -105px;
+    margin-left: -80px;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .main-container {
     margin: 0;
   }
