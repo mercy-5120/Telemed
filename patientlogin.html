@@ -1,46 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login Page</title>
-    <link rel="stylesheet" href="patientloginstyles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body claass="patient-login">
+    <div class="container1">
+      <div class="login-box">
+        <div class="form-section1">
+          <h1>Log In</h1>
 
-<div class="container">
-    <div class="login-box">
+          <label for="email">Email Address:</label><br />
+          <input type="email" id="email" name="email" /><br />
 
-        <div class="form-section">
+          <label for="password">Password:</label><br />
+          <input type="password" id="password" name="password" /><br />
 
-            <h1>Log In</h1>
+          <div class="options-row">
+            <label><input type="checkbox" /> Remember me</label>
+            <a href="forgot-password.html" class="link-button"
+              >Forgot Password?</a
+            >
+          </div>
 
-            <label for="email">Email Address:</label><br>
-            <input type="email" id="email" name="email"><br>
+          <button class="login-btn">LOGIN</button>
 
-            <label for="password">Password:</label><br>
-            <input type="password" id="password" name="password"><br>
-
-            <div class="options-row">
-                <label><input type="checkbox"> Remember me</label>
-                <a href="forgot-password.html" class="link-button">Forgot Password?</a>
-            </div>
-
-            <button class="login-btn">LOGIN</button>
-
-            <div class="extra-links">
-                <p>New User? <a href="patientsignup.html" class="link-button">Sign Up</a></p>
-                <p>Are you a doctor? <a href="doctor-login.html" class="link-button">Sign in here</a></p>
-            </div>
+          <div class="extra-links">
+            <p>
+              New User?
+              <a href="patientsignup.html" class="link-button">Sign Up</a>
+            </p>
+            <p>
+              Are you a doctor?
+              <a href="doctor-login.html" class="link-button">Sign in here</a>
+            </p>
+          </div>
         </div>
 
-        <div class="image-section" style="position: relative;">
-            <img src="images/patient_form.png" alt="Patient Form Illustration" class="illustration">
-            <img src="images/logo.png" alt="Telecure Logo" class="logo">
+        <div class="image-section" style="position: relative">
+          <img
+            src="images/patient_form.png"
+            alt="Patient Form Illustration"
+            class="illustration"
+          />
+          <img src="images/logo.png" alt="Telecure Logo" class="logo1" />
         </div>
-
+      </div>
     </div>
-</div>
-
-</body>
+  </body>
 </html>
