@@ -1,0 +1,143 @@
+/* Reset and Base Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6fc;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container Box */
+.container {
+    display: flex;
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    gap: 40px;
+}
+
+/* Image Section (Left side) */
+.image-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.illustration {
+    width: 500px;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Form Section (Right side) */
+.form-section {
+    max-width: 400px;
+    width: 100%;
+    position: relative;
+}
+
+/* Logo inside form, top-right corner */
+.logo {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: auto;
+    margin: 0;
+}
+
+/* Headings */
+h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+/* Input Fields */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.email-contact-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.email-contact-row > div {
+    flex: 1;
+}
+
+.email-contact-row label,
+.email-contact-row input {
+    width: 90%;
+    display: block;
+}
+
+
+/* Password Row Layout */
+.password-row {
+    display: flex;
+    gap: 40px;
+}
+
+.password-field {
+    flex: 1;
+}
+
+/* Sign Up Button */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #2458ff;
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #1e4ae0;
+}
+
+/* Disclaimer Text */
+.disclaimer {
+    font-size: 12px;
+    color: #555;
+    text-align: center;
+    margin-top: 15px;
+    line-height: 1.4;
+}
+
+.disclaimer a {
+    color: #2458ff;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+/* Links Below Form */
+.links {
+    font-size: 14px;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.links a {
+    color: #2458ff;
+    text-decoration: underline;
+    font-weight: bold;
+}
