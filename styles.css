@@ -1000,6 +1000,8 @@ button:hover {
   font-weight: bold;
 }
 
+/* Doctor Registration Form Styles */
+
 /* Background and logo */
 .background {
   background: url("images/doctor_form.png") no-repeat center center/cover;
@@ -1032,11 +1034,23 @@ button:hover {
   z-index: 3;
 }
 
+.register-card .register-image {
+  width: 100px;
+  height: 100px;
+  background-image: url("images/doctor_login.png");
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+
 .register-card h2 {
-  text-align: center;
-  margin-bottom: 25px;
+  text-align: left;
+
   font-size: 20px;
   font-weight: bold;
+  margin-left: 50px;
 }
 
 /* Form Layout */
@@ -1074,6 +1088,11 @@ form {
   font-size: 16px;
   cursor: pointer;
   margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.register-btn:hover {
+  background-color: #3758dd;
 }
 
 /* Additional Info */
@@ -1087,6 +1106,13 @@ form {
 .switch-login a {
   color: #0f0f0f;
   text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.switch-login a:hover {
+  color: #3758dd;
+  text-decoration: underline;
+  font-weight: bold;
 }
 
 @media (min-width: 768px) and (max-width: 1300px) {
@@ -1257,6 +1283,23 @@ form {
     margin-bottom: 20px;
     margin-top: -30px;
     margin-left: -20px;
+  }
+
+  /* Doctor Registration */
+  .register-card {
+    width: 90%;
+    padding: 20px;
+    margin: 0 auto;
+    height: 570px;
+  }
+
+  .switch-login {
+    margin-top: -20px;
+  }
+
+  .logo-top-left {
+    left: 0;
+    top: 0;
   }
 }
 
@@ -1528,5 +1571,26 @@ form {
     margin-bottom: 20px;
     margin-top: -30px;
     margin-left: -20px;
+  }
+
+  /* Doctor Registration */
+  .background {
+    height: auto;
+  }
+  .register-card {
+    width: 100%;
+    padding: 20px;
+    border-radius: 20px;
+    height: 100%;
+  }
+
+  .logo-top-left {
+    z-index: 100;
+    top: 0;
+    left: 280px;
+  }
+
+  input[type="file"] {
+    width: 200px;
   }
 }
