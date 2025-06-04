@@ -1276,7 +1276,9 @@ button:hover {
   height: auto;
 }
 
-* {
+
+
+.DoctorSignUp {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
