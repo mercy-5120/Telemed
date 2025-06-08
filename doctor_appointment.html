@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DoctorDash - Appointments</title>
+    <link rel="stylesheet" href="doctor_appointment.css">
+    <link rel="icon" href="images/logo.png" />
+</head>
+<body>
+
+<div class="icons">
+    <div class="top-icons">
+        <img src="images/logo.png" alt="Telecure Logo">
+        <a href="home.html"><img src="icons/home.png" alt="Home Logo"></a>
+        <a href="appointments.html"><img src="icons/appointments.png" alt="Appointments Logo"></a>
+        <a href="messages.html"><img src="icons/message.png" alt="Message Logo"></a>
+        <a href="records.html"><img src="icons/records.png" alt="Records Logo"></a>
+        <a href="settings.html"><img src="icons/settings.png" alt="Settings Logo"></a>
+    </div>
+    <div class="bottom-icon">
+        <a href="doctor_login.html"><img src="icons/logout.png" alt="Logout Logo"></a>
+    </div>
+</div>
+
+<header>
+    <input type="text" placeholder="Search for appointments">
+    <button>Appointments</button>
+    <img src="icons/notification.png" alt="Notification Logo">
+    <img src="icons/calendar.png" alt="Calendar Logo">
+
+</header>
+
+<!-- Welcome Section -->
+<section>
+    <h2>Welcome, Dr. <!--?= doctor_name ?--></h2>
+    <p>Have a nice day</p>
+
+    <!-- Summary Cards -->
+    <div class = "summary-cards" >
+        <div>
+            <h3><!--?= total_patients ?--></h3>
+            <img src="icons/TotalPatients.png" alt="Total Patients Logo">
+            <p>Total patients</p>
+        </div>
+        <div>
+            <h3><!--?= total_appointments ?--></h3>
+            <img src="icons/TotalAppointments.png" alt="Total Appointments Logo">
+            <p>Total appointments</p>
+        </div>
+        <div>
+            <h3><!--?= total_income ?--></h3>
+            <img src="icons/TotalIncome.png" alt="Total Income Logo">
+            <p>Total income</p>
+        </div>
+    </div>
+</section>
+
+<!-- Appointments Table -->
+<section>
+    <h3>Appointments</h3>
+    <table border="1">
+        <thead>
+        <tr>
+            <th>Patient Name</th>
+            <th>Visit ID</th>
+            <th>Date</th>
+            <th>Gender</th>
+            <th>Time</th>
+            <th>Location</th>
+            <th>Disease</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><!--?= $appointment['name'] ?--></td>
+            <td><!--?= $appointment['visit_id'] ?--></td>
+            <td><!--?= $appointment['date'] ?--></td>
+            <td><!--?= $appointment['gender'] ?--></td>
+            <td><!--?= $appointment['time'] ?--></td>
+            <td><!--?= $appointment['location'] ?--></td>
+            <td><!--?= $appointment['disease'] ?--></td>
+            <td>
+                <button>Join</button>
+                <button>Reschedule</button>
+                <button>Cancel</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</section>
+
+<!-- Appointment Requests -->
+<section>
+    <h3>Appointment Requests</h3>
+    <div>
+        <p>No new requests.</p>
+        <p><!--?= $request['detail'] ?--></p>
+    </div>
+</section>
+</body>
+</html>
