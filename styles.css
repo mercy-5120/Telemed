@@ -3186,7 +3186,7 @@ section div:last-of-type p {
 .doctor-page .chat-window .input-area {
   display: flex;
   align-items: center;
-  padding: 16px 24px;
+  padding: 10px 20px;
   border-top: 1px solid #e0e0e0;
   background: #fff;
   gap: 12px;
@@ -3200,7 +3200,7 @@ section div:last-of-type p {
   transition: color 0.2s;
 }
 .doctor-page .chat-window .input-area button:hover {
-  color: #000;
+  color: #fdf6f6;
 }
 .doctor-page .chat-window .input-area input {
   flex: 1;
