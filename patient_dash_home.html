@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Telecure Dashboard</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="images/logo.png" type="image/x-icon" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container-dash-patient">
+      <div class="menu-container">
+        <div class="sidebar">
+          <img src="images/logo.png" class="logo-dash" alt="Logo" />
+          <img src="icons/home.png" class="icon" alt="Home" />
+          <img src="icons/appointments.png" class="icon" alt="Health" />
+          <img src="icons/records.png" class="icon" alt="Records" />
+          <img src="icons/message.png" class="icon" alt="Play" />
+          <img src="icons/settings.png" class="icon" alt="Settings" />
+          <img src="icons/logout.png" class="icon" alt="Logout" />
+        </div>
+        <div class="hover-content">
+          <img src="images/logo.png" class="logo-dash" alt="Logo" />
+          <a href="#"
+            ><img src="icons/home.png" alt="Home" class="icon" /> Home</a
+          >
+          <a href="#"
+            ><img
+              src="icons/appointments.png"
+              alt="Appointments"
+              class="icon"
+            />
+            Appointments</a
+          >
+          <a href="#"
+            ><img src="icons/records.png" alt="Medical Records" class="icon" />
+            Medical Records</a
+          >
+          <a href="#"
+            ><img src="icons/message.png" alt="Messages" class="icon" />
+            Messages</a
+          >
+          <a href="patient_dash_settings.html"
+            ><img src="icons/settings.png" alt="Settings" class="icon" />
+            Settings</a
+          >
+          <a href="#"
+            ><img src="icons/logout.png" alt="Log out" class="icon" /> Log
+            out</a
+          >
+        </div>
+      </div>
+
+      <div class="main">
+        <div class="topbar">
+          <input
+            type="text"
+            class="search-box"
+            placeholder="Enter specialty or condition i.e. dermatologist"
+          />
+          <div class="dash-icons">
+            <button class="appointment-btn">Book an appointment</button>
+
+            <a href="#"
+              ><img
+                src="icons/notification.png"
+                alt="notification"
+                class="icon1"
+            /></a>
+            <a href="#"
+              ><img src="icons/calendar.png" alt="calendar" class="icon1"
+            /></a>
+          </div>
+        </div>
+
+        <div class="profile-dash">
+          <div class="profile-section">
+            <div class="card">
+              <div class="profile-card"></div>
+              <p>User Name<br />Age: 40</p>
+              <button class="update">Update</button>
+            </div>
+
+            <div class="card">
+              <h3>Basic Info</h3>
+              <p><span class="info-label">Gender:</span> Male</p>
+              <p><span class="info-label">Bloodtype:</span> O +(Positive) </p>
+              <p><span class="info-label">Allergies:</span> Milk, Eggs</p>
+              <p><span class="info-label">Diseases:</span> Diabetes, Blood Pressure</p>
+              <p><span class="info-label">Height:</span> 1.98m</p>
+              <p><span class="info-label">Weight:</span> 89 kg</p>
+              <p><span class="info-label">Patient ID:</span> 190293893</p>
+              <p><span class="info-label">Last Visit:</span> 25th October 2024</p>
+            </div>
+          </div>
+
+          <div class="section2-patient">
+            <div class="vitals">
+              <div class="vital-card">
+                <img
+                  src="icons/heart-rate.png"
+                  alt="Heart Rate"
+                  class="vital-icon"
+                />
+                <h4>Heart Rate</h4>
+                <p >
+                  80 >bpm</span>
+                </p>
+              </div>
+              <div class="vital-card">
+                <img
+                  src="icons/temperature.png"
+                  alt="Temperature"
+                  class="vital-icon"
+                />
+                <h4>Body Temperature</h4>
+                <p \>
+                  36.5 <span>°C</span>
+                </p>
+              </div>
+              <div class="vital-card">
+                <img src="icons/glucose.png" alt="Glucose" class="vital-icon" />
+                <h4>Blood Glucose</h4>
+                <p >
+                  100>mg/dl</span>
+                </p>
+              </div>
+            </div>
+            '
+            <div class="appointments">
+              <h3>Upcoming Appointments</h3>
+              <div class="appointments-grid">
+                <div class="appointment-card">
+                  <div class="details">
+                    <p><span class="label">Doctor Name:</span> John Doe</p>
+                    <p><span class="label">Date:</span> 12/06/2025</p>
+                    <p><span class="label">Specialty:</span> Dermatology</p>
+                    <p><span class="label">Time:</span> 9:00 a.m</p>
+                    <p><span class="label">Location:</span> Virtual</p>
+                    <p><span class="label">Status:</span> Booked</p>
+                  </div>
+                  <div class="appointment-actions">
+                    <button>Join Session</button>
+                    <button>Reschedule</button>
+                    <button>Cancel</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tips">
+              <h3>Health Tips</h3>
+              <div class="tips-grid">
+                <div class="tip-card" >
+                  <div class="healthy-eating"><h3>HEALTHY EATING</h3></div>
+                  <p>
+                    Eat more fruits and vegetables to strengthen your immune
+                    system and improve overall health.
+                  </p>
+                  <a href="#">Read more >></a>
+                </div>
+                <div class="tip-card">
+                 <div class="stay-hydrated"><h3>STAY HYDRATED</h3></div>
+                  <p>
+                    Drink at least 8 glasses of water per day to stay hydrated
+                    and support organ function.
+                  </p>
+                  <a href="#">Read more >></a>
+                </div>
+                <div class="tip-card">
+                  <div class="mental"><h3>MENTAL WELL-BEING</h3></div>
+                  <p>
+                    Practice mindfulness, meditation, or breathing exercises to
+                    reduce stress and improve mental clarity.
+                  </p>
+                  <a href="#">Read more >></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
