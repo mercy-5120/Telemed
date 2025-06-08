@@ -1457,3 +1457,620 @@ form {
   text-decoration: none;
 }
 
+/* patient-styles.css */
+
+/* patient.css - scoped to .patient-page */
+/* patient.css - scoped to .patient-page with enhanced variables & responsiveness */
+/* patient.css - scoped to .patient-page with enhanced variables & responsiveness */
+
+/* patient.css - scoped to .patient-page with enhanced variables & responsiveness */
+
+/* patient.css - scoped to .patient-page with enhanced variables & responsiveness */
+
+:root {
+  /* Colors */
+  --bg-dark: #1e1e1e;
+  --sidebar-bg: #0E2996;
+  --primary: #3758DD;
+  --grey-light: #f9f9f9;
+  --grey-mid: #e0e0e0;
+  --grey-dark: #666;
+  --text-dark: #111;
+  --text-light: #fff;
+
+  /* Sizes */
+  --sidebar-width: 90px;
+  --chatlist-width: 300px;
+  --radius-sm: 4px;
+  --radius-md: 16px;
+  --transition: 0.2s ease;
+  --bubble-gap: 0.5rem;
+  --bubble-padding-vertical: 0.5rem;
+  --bubble-padding-horizontal: 0.75rem;
+}
+
+/* ─── RESET & BASE ───────────────────────────────────────────────────────── */
+.patient-page *,
+.patient-page *::before,
+.patient-page *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.patient-page html,
+.patient-page body {
+  width: 100%;
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+  background: var(--bg-dark);
+  color: var(--text-dark);
+}
+.patient-page button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition);
+}
+.patient-page button:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* ─── TITLE BAR ─────────────────────────────────────────────────────────── */
+.patient-page .title-bar {
+  background: var(--bg-dark);
+  color: var(--text-light);
+  font-size: 1.125rem;
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+}
+
+/* ─── LAYOUT ──────────────────────────────────────────────────────────────── */
+.patient-page .app {
+  display: flex;
+  height: calc(100vh - 3rem);
+  overflow: hidden;
+}
+
+/* ─── SIDEBAR ────────────────────────────────────────────────────────────── */
+.patient-page .sidebar {
+  width: var(--sidebar-width);
+  background: var(--sidebar-bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.25rem 0;
+  gap: 1.5rem;
+  border-top-right-radius: var(--radius-md);
+}
+.patient-page .sidebar img {
+  width: 2.25rem;
+  height: 2.25rem;
+  filter: invert(1);
+}
+.patient-page .sidebar button {
+  padding: 0.5rem;
+  border-radius: var(--radius-sm);
+}
+.patient-page .sidebar button:hover,
+.patient-page .sidebar button.active {
+  background: rgba(255, 255, 255, 0.2);
+}
+.patient-page .sidebar button.active img {
+  filter: none;
+}
+
+/* ─── CHAT VIEW ───────────────────────────────────────────────────────────── */
+.patient-page .chat-view {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: var(--grey-light);
+}
+
+/* Header */
+.patient-page .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background: var(--grey-light);
+  border-bottom: 1px solid var(--grey-mid);
+}
+.patient-page .profile {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.patient-page .profile img {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+}
+.patient-page .profile h2 {
+  font-size: 1.125rem;
+  color: var(--text-dark);
+}
+.patient-page .profile small {
+  font-size: 0.75rem;
+  color: var(--grey-dark);
+}
+.patient-page .actions button {
+  font-size: 1.25rem;
+  margin-left: 1rem;
+  color: var(--grey-mid);
+}
+.patient-page .actions button:hover {
+  color: var(--text-dark);
+}
+
+/* ─── MESSAGES AREA ─────────────────────────────────────────────────────── */
+.patient-page .messages-area {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* Chat List */
+.patient-page .chat-list {
+  width: var(--chatlist-width);
+  background: var(--grey-light);
+  border-right: 1px solid var(--grey-mid);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--grey-mid) transparent;
+}
+.patient-page .chat-list::-webkit-scrollbar {
+  width: 6px;
+}
+.patient-page .chat-list::-webkit-scrollbar-thumb {
+  background: var(--grey-mid);
+  border-radius: 3px;
+}
+
+/* Search + Add */
+.patient-page .search-add {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  gap: 0.5rem;
+  border-bottom: 1px solid var(--grey-mid);
+}
+.patient-page .search-add input {
+  flex: 1;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--grey-mid);
+  border-radius: 1.25rem;
+}
+.patient-page .search-add .add {
+  width: 2rem;
+  height: 2rem;
+  font-size: 1.5rem;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.patient-page .search-add .add:hover,
+.patient-page .search-add .add:focus {
+  background: var(--primary);
+  color: var(--text-light);
+}
+
+.patient-page .actions {
+  display: flex;
+  gap: 1rem; /* Space between icons */
+  justify-content: center; /* Centers them horizontally */
+  align-items: center; /* Ensures vertical alignment */
+}
+
+
+/* Chat Entry */
+.patient-page .chat-entry {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  gap: 0.75rem;
+  position:relative;
+  cursor:pointer;
+  transition: background var(--transition);
+}
+.patient-page .chat-entry:hover,
+.patient-page .chat-entry.selected {
+  background: var(--grey-light);
+}
+.patient-page .chat-entry img.avatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius:50%;
+}
+.patient-page .chat-entry strong {
+  display:block;
+  font-size:0.875rem;
+}
+.patient-page .chat-entry small {
+  font-size:0.75rem;
+  color:var(--grey-dark);
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.patient-page .chat-entry time {
+  margin-left:auto;
+  font-size:0.75rem;
+  color:var(--grey-mid);
+}
+
+/* Unread Dot */
+.patient-page .chat-entry.unread::before {
+  content:'';
+  position:absolute;
+  top:1rem;
+  left:1rem;
+  width:0.5rem;
+  height:0.5rem;
+  background:var(--primary);
+  border-radius:50%;
+}
+
+/* ─── CHAT WINDOW ───────────────────────────────────────────────────────── */
+.patient-page .chat-window {
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  background:var(--grey-light);
+}
+
+.patient-page .chat-window .messages {
+  margin: 0;
+  flex:1;
+  padding:0.5rem;
+  overflow-y:auto;
+  display:flex;
+  flex-direction:column;
+  gap: 0rem
+}
+
+.patient-page .chat-window .message {
+  padding: var(--bubble-padding-vertical) var(--bubble-padding-horizontal);
+  border-radius: 16px;
+  align-items: flex-start;
+  font-size:0.875rem;
+  line-height:1.4;
+  max-width:40%;
+}
+
+.patient-page .chat-window .message.received {
+  background:var(--grey-mid);
+  color:var(--text-dark);
+  align-self:flex-start;
+}
+.patient-page .chat-window .message.sent {
+  background:var(--primary);
+  color:var(--text-light);
+  align-self:flex-end;
+}
+
+/* ─── INPUT AREA ────────────────────────────────────────────────────────── */
+.patient-page .input-area {
+  display:flex;
+  align-items:center;
+  padding:1rem 1.5rem;
+  border-top:1px solid var(--grey-mid);
+  background:var(--text-light);
+  gap:0.75rem;
+}
+.patient-page .input-area .icon {
+  font-size:1.25rem;
+  color:var(--grey-mid);
+  transition:color var(--transition);
+}
+.patient-page .input-area .icon:hover,
+.patient-page .input-area .icon:focus {
+  color:var(--text-dark);
+}
+.patient-page .input-area input {
+  flex:1;
+  padding:0.5rem 1rem;
+  border:1px solid var(--grey-mid);
+  border-radius:1.25rem;
+}
+.patient-page .input-area .send {
+  font-size:1.5rem;
+  color:var(--sidebar-bg);
+  transition:color var(--transition);
+}
+.patient-page .input-area .send:hover,
+.patient-page .input-area .send:focus {
+  color:var(--primary);
+}
+
+/* ─── RESPONSIVE ─────────────────────────────────────────────────────────── */
+@media(max-width:1024px){:root{--chatlist-width:250px;}}
+@media(max-width:768px){.patient-page .chat-list{display:none;}.patient-page .sidebar{width:60px;}.patient-page .profile h2{display:none;}.patient-page .app{flex-direction:column;height:auto;}}
+
+
+
+/*────────────────────────────────────────────────────────────────────────────
+  RESET (scoped to doctor-page)
+────────────────────────────────────────────────────────────────────────────*/
+.doctor-page *,
+.doctor-page *::before,
+.doctor-page *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/*────────────────────────────────────────────────────────────────────────────
+  TITLE BAR
+────────────────────────────────────────────────────────────────────────────*/
+.doctor-page .title-bar {
+  background: #1e1e1e;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 12px 24px;
+}
+
+/*────────────────────────────────────────────────────────────────────────────
+  APP LAYOUT
+────────────────────────────────────────────────────────────────────────────*/
+.doctor-page .app {
+  display: flex;
+  height: calc(100vh - 48px); /* account for title-bar */
+  overflow: hidden;
+  background: #1e1e1e;
+}
+
+/*────────────────────────────────────────────────────────────────────────────
+  SIDEBAR
+────────────────────────────────────────────────────────────────────────────*/
+.doctor-page .sidebar {
+  width: 90px;
+  background: #ea4335;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+  gap: 30px;
+  border-top-right-radius: 50px;
+}
+.doctor-page .sidebar img {
+  width: 36px;
+  height: 36px;
+}
+.doctor-page .sidebar button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 10px;
+  transition: background 0.2s;
+}
+.doctor-page .sidebar button:hover {
+  background: rgba(255,255,255,0.2);
+}
+.doctor-page .sidebar button.active {
+  background: rgba(255,255,255,0.3);
+}
+
+/*────────────────────────────────────────────────────────────────────────────
+  CHAT VIEW (RIGHT PANEL)
+────────────────────────────────────────────────────────────────────────────*/
+.doctor-page .chat-view {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+}
+
+/* Header */
+.doctor-page .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  border-bottom: 1px solid #e0e0e0;
+}
+.doctor-page .profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.doctor-page .profile img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.doctor-page .profile h2 {
+  font-size: 18px;
+  color: #111;
+}
+.doctor-page .profile small {
+  font-size: 12px;
+  color: #666;
+}
+.doctor-page .actions button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  margin-left: 16px;
+  cursor: pointer;
+  color: #ccc;
+  transition: color 0.2s;
+}
+.doctor-page .actions button:hover {
+  color: #000;
+}
+
+/*────────────────────────────────────────────────────────────────────────────
+  MESSAGES AREA (chat list + chat window)
+────────────────────────────────────────────────────────────────────────────*/
+.doctor-page .messages-area {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* Chat List */
+.doctor-page .chat-list {
+  width: 300px;
+  background: #fff;
+  border-right: 1px solid #e0e0e0;
+  overflow-y: auto;
+}
+
+/* Search + Add */
+.doctor-page .chat-list .search-add {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  gap: 8px;
+  background: #fff;
+  border-bottom: 1px solid #e0e0e0;
+}
+.doctor-page .chat-list .search-add input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+}
+.doctor-page .chat-list .search-add .add {
+  width: 32px;
+  height: 32px;
+  background: #fff;
+  border: 2px solid #ea4335;
+  color: #ea4335;
+  font-size: 24px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.doctor-page .chat-list .search-add .add:hover {
+  background: #ea4335;
+  color: #fff;
+}
+
+/* Chat Entries */
+.doctor-page .chat-list .chat-entry {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  gap: 12px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.doctor-page .chat-list .chat-entry:hover,
+.doctor-page .chat-list .chat-entry.selected {
+  background: #f5f5f5;
+}
+.doctor-page .chat-list .chat-entry img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.doctor-page .chat-list .chat-entry strong {
+  display: block;
+  font-size: 14px;
+  color: #111;
+}
+.doctor-page .chat-list .chat-entry small {
+  font-size: 12px;
+  color: #666;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.doctor-page .chat-list .chat-entry time {
+  margin-left: auto;
+  font-size: 12px;
+  color: #999;
+}
+.doctor-page .actions {
+  display: flex;
+  gap: 1rem; /* Space between icons */
+  justify-content: center; /* Centers them horizontally */
+  align-items: center; /* Ensures vertical alignment */
+}
+
+/*────────────────────────────────────────────────────────────────────────────
+  CHAT WINDOW
+────────────────────────────────────────────────────────────────────────────*/
+.doctor-page .chat-window {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #f9f9f9;
+}
+
+/* Message bubbles */
+.doctor-page .chat-window .messages {
+  flex: 1;
+  padding: 24px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+.doctor-page .chat-window .message {
+  display: inline-block;
+  padding: 12px 16px;
+  border-radius: 16px;
+  margin-bottom: 12px;
+  max-width: 60%;
+  font-size: 14px;
+  line-height: 1.4;
+}
+.doctor-page .chat-window .message.received {
+  background: #e0e0e0;
+  color: #111;
+  align-self: flex-start;
+}
+.doctor-page .chat-window .message.sent {
+  background: #ea4335;
+  color: #fff;
+  align-self: flex-end;
+}
+
+/*────────────────────────────────────────────────────────────────────────────
+  INPUT AREA
+────────────────────────────────────────────────────────────────────────────*/
+.doctor-page .chat-window .input-area {
+  display: flex;
+  align-items: center;
+  padding: 16px 24px;
+  border-top: 1px solid #e0e0e0;
+  background: #fff;
+  gap: 12px;
+}
+.doctor-page .chat-window .input-area button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #ccc;
+  transition: color 0.2s;
+}
+.doctor-page .chat-window .input-area button:hover {
+  color: #000;
+}
+.doctor-page .chat-window .input-area input {
+  flex: 1;
+  padding: 10px 16px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  font-size: 14px;
+  color: #333;
+}
+.doctor-page .chat-window .input-area .send {
+  font-size: 24px;
+  color: #ea4335;
+  transition: color 0.2s;
+}
+.doctor-page .chat-window .input-area .send:hover {
+  color: #000;
+}
