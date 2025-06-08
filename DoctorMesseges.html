@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Doctor-Messages</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body  class="doctor-page">
+    
+  <div class="title-bar">Doctor-Messages</div>
+  <div class="app">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <img src="icons/logo.png" alt="Logo" style="width: 50px; height: 50px;">
+      <button class="active"><img src="icons/home.png" alt="Home"></button>
+      <button><img src="icons/calendar.png" alt="Calendar"></button>
+      <button><img src="icons/play.png" alt="Play"></button>
+      <button><img src="icons/folder.png" alt="Folder"></button>
+      <button><img src="icons/settings.png" alt="Settings"></button>
+      <button><img src="icons/logout.png" alt="Logout"></button>
+    </div>
+
+    <!-- Chat View -->
+    <div class="chat-view">
+      <!-- Header -->
+      <div class="header">
+        <div class="profile">
+          <img src="icons/user.png" alt="Profile">
+          <div>
+            <h2>Dr John Doe</h2>
+            <small>Active now</small>
+          </div>
+        </div>
+        <div class="actions">
+          <button>📞</button>
+          <button>🎥</button>
+          <button>⋮</button>
+        </div>
+      </div>
+
+      <!-- Chat Body -->
+      <div class="messages-area">
+        <!-- Chat List -->
+        <div class="chat-list">
+          <div class="search-add">
+            <input type="text" placeholder="Search messages..">
+            <div class="add">+</div>
+          </div>
+          <div class="chat-entry selected">
+            <img src="icons/user.png" alt="Dr John Doe">
+            <div>
+              <strong>Mary Doe</strong>
+              <small>Remember to book your appointment for y ...</small>
+            </div>
+            <time>4 min</time>
+          </div>
+          <!-- Duplicate entries for design -->
+          <div class="chat-entry">
+            <img src="icons/user.png" alt="Dr John Doe">
+            <div>
+              <strong>Dr John Doe</strong>
+              <small>Remember to book your appointment for y ...</small>
+            </div>
+            <time>Yesterday</time>
+          </div>
+          
+        </div>
+
+        <!-- Chat Window -->
+        <div class="chat-window">
+          <div class="messages">
+            <div class="message received">Remember to book your appointment for your skin to be checked</div>
+            <div class="message sent">Thank you for the reminder!</div>
+          </div>
+          <div class="input-area">
+            <button>📎</button>
+            <button>🎤</button>
+            <button>😊</button>
+            <input type="text" placeholder="Type something ..">
+            <button class="send">➤</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
