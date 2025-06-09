@@ -178,7 +178,7 @@ nav ul li .navlinks:hover::after {
 .about-section .about-img {
   width: 40%;
   height: auto;
-  background-image: url("images/about.jpg");
+  background-image: url("images/about.png");
   background-size: cover;
   background-position: center;
 }
@@ -923,7 +923,7 @@ button:hover {
 .login-card .login-image {
   width: 150px;
   height: 150px;
-  background-image: url("images/doctor_login.png");
+  background-image: url("images/doctor_form.png");
   background-size: cover;
   background-position: center;
   border-radius: 10px;
@@ -1039,7 +1039,7 @@ button:hover {
 .register-card .register-image {
   width: 100px;
   height: 100px;
-  background-image: url("images/doctor_login.png");
+  background-image: url("images/doctor_form.png");
   background-size: cover;
   background-position: center;
   border-radius: 10px;
@@ -1116,25 +1116,372 @@ form {
   text-decoration: underline;
   font-weight: bold;
 }
+/* Doctor Dashboard */
+/* Sidebar */
+.container {
+  display: flex;
+  width: 100%;
+  height: auto;
+  background-color: #ffffff;
+}
+
+.container .menu-container-doc {
+  margin-left: -40px;
+  margin-top: -40px;
+  height: auto;
+}
+
+/* Main Content */
+.main-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f9fa;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 25px;
+  padding: 8px 15px;
+  width: 300px;
+}
+
+.search-bar i {
+  color: #adb5bd;
+  margin-right: 10px;
+}
+
+.search-bar input {
+  border: none;
+  outline: none;
+  width: 100%;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.appointment-btn {
+  background-color: #e63946;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 20px;
+  cursor: pointer;
+}
+
+.notification,
+.calendar {
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #495057;
+}
+
+/* Welcome Banner */
+.welcome-banner {
+  background: linear-gradient(to right, #457b9d, #1d3557);
+  color: white;
+  padding: 30px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  background-image: url("images/medical-bg.svg");
+  background-size: cover;
+  background-position: center;
+  height: 150px;
+  display: flex;
+  align-items: center;
+}
+
+.welcome-banner h1 {
+  font-size: 32px;
+}
+
+/* Dashboard Content */
+.dashboard-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+}
+
+.appointments-section {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.appointment-requests,
+.appointments {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 20px;
+  flex: 1;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.appointment-requests h3,
+.appointments h3 {
+  color: #1d3557;
+  margin-bottom: 15px;
+  font-size: 18px;
+  border-bottom: 2px solid #e63946;
+  padding-bottom: 10px;
+  display: inline-block;
+}
+
+.patient-list {
+  list-style: none;
+}
+
+.patient-list li {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.patient-avatar {
+  width: 40px;
+  height: 40px;
+  background-color: #e9ecef;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.patient-info {
+  flex: 1;
+}
+
+.patient-info h4 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.patient-info p {
+  font-size: 14px;
+  color: #6c757d;
+}
+
+.patient-info span {
+  font-weight: bold;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.action-buttons button {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.action-buttons .accept {
+  background-color: #2a9d8f;
+  color: white;
+}
+
+.action-buttons .reject {
+  background-color: #e63946;
+  color: white;
+}
+
+/* Doctor Info */
+.doctor-info {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 20px;
+  flex: 1;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.doctor-info h3 {
+  color: #1d3557;
+  font-size: 18px;
+}
+
+.doctor-info > p {
+  color: #6c757d;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.stats {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.stat-box {
+  flex: 1;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #f8f9fa;
+}
+
+.stat-box h2 {
+  color: #1d3557;
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.stat-box p {
+  color: #6c757d;
+  font-size: 12px;
+}
+
+.quick-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: auto;
+}
+
+.action-box {
+  flex: 1;
+  padding: 15px;
+  border-radius: 10px;
+  position: relative;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.action-box.red {
+  background-color: #e63946;
+  color: white;
+}
+
+.action-box.white {
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+  color: #1d3557;
+}
+
+.action-box h2 {
+  font-size: 28px;
+  margin-bottom: 5px;
+}
+
+.action-box p {
+  font-size: 12px;
+}
+
+.action-box i {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 20px;
+}
+
+/* Recent Patients */
+.recent-patients {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.recent-patients h3 {
+  color: #1d3557;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background-color: #f8f9fa;
+}
+
+th,
+td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #e9ecef;
+}
+
+th {
+  color: #6c757d;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+td {
+  color: #212529;
+  font-size: 14px;
+}
+
+.patient-row {
+  display: flex;
+  align-items: center;
+}
+
+.patient-avatar.small {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.status {
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 12px;
+}
+
+.status.outpatient {
+  background-color: #e9ecef;
+  color: #212529;
+}
 
 /* Patient Dashboard */
 .container-dash-patient {
   display: flex;
   width: 100%;
   height: auto;
-  background-color: #f4f6fc;
+  background-color: #fff;
 }
 .menu-container {
   display: flex;
 }
 .sidebar {
-  width: 80px;
+  width: 200px;
   background: #072cb9;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 20px;
-  border-top-right-radius: 50px;
+  border-top-right-radius: 100px;
   transition: all 0.3s ease;
 }
 
@@ -1143,11 +1490,30 @@ form {
   margin-bottom: 30px;
 }
 
-.sidebar .icon,
-.hover-content a .icon {
+.sidebar a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 10px 0;
+  transition: all 0.3s ease;
+  width: 100%;
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  padding: 10px 20px;
+  transition: all 0.3s ease;
+}
+
+.sidebar a:hover {
+  color: #ed4545;
+}
+
+.sidebar .icon {
   width: 30px;
   height: 30px;
   margin: 20px 0;
+  text-align: center;
 }
 
 .logo-dash {
@@ -1156,37 +1522,6 @@ form {
   margin-bottom: 20px;
 }
 
-.hover-content {
-  display: none;
-  background: #072cb9;
-  width: 300px;
-  border-top-right-radius: 130px;
-  transition: all 0.3s ease;
-}
-
-.hover-content a {
-  text-decoration: none;
-  color: white;
-  display: flex;
-  align-items: center;
-  padding: 20px;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-  transition: all 0.3s ease;
-}
-
-.hover-content a:hover {
-  background-color: #ed4545;
-  font-weight: bold;
-}
-
-.menu-container:hover .hover-content {
-  display: block;
-}
-
-.menu-container:hover .sidebar {
-  display: none;
-}
 .main {
   flex: 1;
   padding: 20px;
@@ -1722,65 +2057,48 @@ form {
 .menu-container-doc {
   display: flex;
 }
-.menu-container-doc .sidebar {
-  width: 80px;
+.menu-container-doc .sidebar-doc {
+  width: 200px;
   background: #ed4545;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 20px;
-  border-top-right-radius: 50px;
+  border-top-right-radius: 100px;
   transition: all 0.3s ease;
 }
 
-.sidebar .sidebar img.logo {
+.sidebar-doc img.logo {
   width: 60px;
   margin-bottom: 30px;
 }
-
-.menu-container-doc .sidebar .icon,
-.hover-content a .icon {
+.sidebar-doc .icon {
   width: 30px;
   height: 30px;
   margin: 20px 0;
+}
+.sidebar-doc a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 10px 0;
+  transition: all 0.3s ease;
+  width: 100%;
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  padding: 10px 20px;
+}
+
+.sidebar-doc a:hover {
+  color: #072cb9;
 }
 
 .logo-dash {
   width: 80px;
   height: 80px;
   margin-bottom: 20px;
-}
-
-.menu-container-doc .hover-content {
-  display: none;
-  background: #ed4545;
-  width: 300px;
-  border-top-right-radius: 130px;
-  transition: all 0.3s ease;
-}
-
-.menu-container-doc .hover-content a {
-  text-decoration: none;
-  color: white;
-  display: flex;
-  align-items: center;
-  padding: 20px;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-  transition: all 0.3s ease;
-}
-
-.menu-container-doc .hover-content a:hover {
-  background-color: #0e2996;
-  font-weight: bold;
-}
-
-.menu-container-doc:hover .hover-content {
-  display: block;
-}
-
-.menu-container-doc:hover .sidebar {
-  display: none;
 }
 
 #nav-settings a {
@@ -1918,6 +2236,221 @@ form {
   background: rgba(255, 255, 255, 0.9);
 }
 
+/* Patient Message Section */
+.chat-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  height: 730px;
+  overflow-y: auto;
+}
+.search-add {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  gap: 10px;
+  padding: 0 20px;
+}
+
+.search-add input {
+  width: 300px;
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.add {
+  border: 1px solid #4339f2;
+  background: transparent;
+  color: #4339f2;
+  font-size: 30px;
+  padding: 10px 18px;
+  border-radius: 40px;
+  transition: all 0.3s ease;
+}
+
+.add-2 {
+  border: 1px solid #ed4545;
+  background: transparent;
+  color: #ed4545;
+  font-size: 30px;
+  padding: 10px 18px;
+  border-radius: 40px;
+  transition: all 0.3s ease;
+}
+
+.add:hover {
+  background: #4339f2;
+  color: white;
+  cursor: pointer;
+}
+
+.chat-entry-seen,
+.chat-entry-seen-over {
+  display: flex;
+  padding: 10px;
+}
+
+.chat-entry-seen-over {
+  background-color: #f0f0f0;
+}
+
+.chat-entry-seen:hover {
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+.chat-entry-seen:focus {
+  background-color: #f0f0f0;
+}
+.chat-entry-seen img,
+.chat-entry-seen-over img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.chat-window {
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  gap: 300px;
+  justify-content: space-between;
+}
+
+.profile {
+  display: flex;
+  gap: 20px;
+  padding: 10px;
+  width: 100%;
+}
+
+.profile img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.text-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.text-box h2 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #000;
+}
+
+.actions {
+  display: flex;
+  gap: 20px;
+  width: 50%;
+}
+
+.actions button {
+  height: 40px;
+  background: transparent;
+}
+
+.actions button img {
+  width: 30px;
+  height: 30px;
+}
+
+.messages-area {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  height: 600px;
+  overflow-y: auto;
+  background-color: #f5f5f5;
+  justify-content: flex-end;
+}
+
+.message.received {
+  background-color: #f0ecec;
+
+  width: 300px;
+  padding: 10px;
+  border-radius: 10px;
+  color: #000;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.message.sent {
+  background-color: #3758dd;
+  color: white;
+  width: 300px;
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 14px;
+  align-self: flex-end;
+}
+
+.message-sent {
+  background-color: #ed4545;
+  color: white;
+  width: 300px;
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 14px;
+  align-self: flex-end;
+}
+
+.input-area {
+  display: flex;
+  gap: 10px;
+  padding: 20px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  margin-bottom: -10px;
+}
+
+.input-area button {
+  width: 45px;
+  height: 45px;
+  background: transparent;
+}
+
+.input-area button img {
+  width: 30px;
+  height: 30px;
+}
+
+.input-area input {
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  background: rgba(255, 255, 255, 0.9);
+  width: 50%;
+  height: 45px;
+  margin-top: 10px;
+}
+
 @media (min-width: 768px) and (max-width: 1300px) {
   .Navbar .nav-links {
     position: absolute;
@@ -1969,7 +2502,7 @@ form {
   .about-section .about-img {
     width: 100%;
     height: auto;
-    background-image: url("images/about.jpg");
+    background-image: url("images/about.png");
     background-size: cover;
     background-position: center;
     border-radius: 20px;
@@ -1999,7 +2532,7 @@ form {
   .cont-img {
     width: 100%;
     height: 300px;
-    background-image: url("images/contact.jpg");
+    background-image: url("images/contact.png");
     background-size: cover;
     background-position: center;
     border-radius: 20px;
@@ -2076,7 +2609,7 @@ form {
   .login-card .login-image {
     width: 100px;
     height: 100px;
-    background-image: url("images/doctor_login.png");
+    background-image: url("images/doctor_form.png");
     background-size: cover;
     background-position: center;
     border-radius: 10px;
@@ -2229,7 +2762,7 @@ form {
   .about-section .about-img {
     width: 100%;
     height: auto;
-    background-image: url("images/about.jpg");
+    background-image: url("images/about.png");
     background-size: cover;
     background-position: center;
     border-radius: 20px;
@@ -2298,7 +2831,7 @@ form {
   .cont-img {
     width: 100%;
     height: 300px;
-    background-image: url("images/contact.jpg");
+    background-image: url("images/contact.png");
     background-size: cover;
     background-position: center;
     border-radius: 20px;
@@ -2403,7 +2936,7 @@ form {
   .login-card .login-image {
     width: 80px;
     height: 80px;
-    background-image: url("images/doctor_login.png");
+    background-image: url("images/doctor_form.png");
     background-size: cover;
     background-position: center;
     border-radius: 10px;
@@ -2435,17 +2968,6 @@ form {
 }
 
 /* ====== Doctor's Appointment ====== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f4f6f9;
-  color: #333;
-}
 
 /* ===== Sidebar Icons ===== */
 .icons {
@@ -2650,8 +3172,8 @@ section div:last-of-type p {
 :root {
   /* Colors */
   --bg-dark: #1e1e1e;
-  --sidebar-bg: #0E2996;
-  --primary: #3758DD;
+  --sidebar-bg: #0e2996;
+  --primary: #3758dd;
   --grey-light: #f9f9f9;
   --grey-mid: #e0e0e0;
   --grey-dark: #666;
@@ -2681,7 +3203,7 @@ section div:last-of-type p {
 .patient-page body {
   width: 100%;
   height: 100%;
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
   background: var(--bg-dark);
   color: var(--text-dark);
 }
@@ -2848,15 +3370,14 @@ section div:last-of-type p {
   align-items: center; /* Ensures vertical alignment */
 }
 
-
 /* Chat Entry */
 .patient-page .chat-entry {
   display: flex;
   align-items: center;
   padding: 0.75rem 1rem;
   gap: 0.75rem;
-  position:relative;
-  cursor:pointer;
+  position: relative;
+  cursor: pointer;
   transition: background var(--transition);
 }
 .patient-page .chat-entry:hover,
@@ -2866,114 +3387,130 @@ section div:last-of-type p {
 .patient-page .chat-entry img.avatar {
   width: 2.5rem;
   height: 2.5rem;
-  border-radius:50%;
+  border-radius: 50%;
 }
 .patient-page .chat-entry strong {
-  display:block;
-  font-size:0.875rem;
+  display: block;
+  font-size: 0.875rem;
 }
 .patient-page .chat-entry small {
-  font-size:0.75rem;
-  color:var(--grey-dark);
-  white-space:nowrap;
-  overflow:hidden;
-  text-overflow:ellipsis;
+  font-size: 0.75rem;
+  color: var(--grey-dark);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .patient-page .chat-entry time {
-  margin-left:auto;
-  font-size:0.75rem;
-  color:var(--grey-mid);
+  margin-left: auto;
+  font-size: 0.75rem;
+  color: var(--grey-mid);
 }
 
 /* Unread Dot */
 .patient-page .chat-entry.unread::before {
-  content:'';
-  position:absolute;
-  top:1rem;
-  left:1rem;
-  width:0.5rem;
-  height:0.5rem;
-  background:var(--primary);
-  border-radius:50%;
+  content: "";
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  background: var(--primary);
+  border-radius: 50%;
 }
 
 /* ─── CHAT WINDOW ───────────────────────────────────────────────────────── */
 .patient-page .chat-window {
-  flex:1;
-  display:flex;
-  flex-direction:column;
-  background:var(--grey-light);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: var(--grey-light);
 }
 
 .patient-page .chat-window .messages {
   margin: 0;
-  flex:1;
-  padding:0.5rem;
-  overflow-y:auto;
-  display:flex;
-  flex-direction:column;
-  gap: 0rem
+  flex: 1;
+  padding: 0.5rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0rem;
 }
 
 .patient-page .chat-window .message {
   padding: var(--bubble-padding-vertical) var(--bubble-padding-horizontal);
   border-radius: 16px;
   align-items: flex-start;
-  font-size:0.875rem;
-  line-height:1.4;
-  max-width:40%;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  max-width: 40%;
 }
 
 .patient-page .chat-window .message.received {
-  background:var(--grey-mid);
-  color:var(--text-dark);
-  align-self:flex-start;
+  background: var(--grey-mid);
+  color: var(--text-dark);
+  align-self: flex-start;
 }
 .patient-page .chat-window .message.sent {
-  background:var(--primary);
-  color:var(--text-light);
-  align-self:flex-end;
+  background: var(--primary);
+  color: var(--text-light);
+  align-self: flex-end;
 }
 
 /* ─── INPUT AREA ────────────────────────────────────────────────────────── */
 .patient-page .input-area {
-  display:flex;
-  align-items:center;
-  padding:1rem 1.5rem;
-  border-top:1px solid var(--grey-mid);
-  background:var(--text-light);
-  gap:0.75rem;
+  display: flex;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border-top: 1px solid var(--grey-mid);
+  background: var(--text-light);
+  gap: 0.75rem;
 }
 .patient-page .input-area .icon {
-  font-size:1.25rem;
-  color:var(--grey-mid);
-  transition:color var(--transition);
+  font-size: 1.25rem;
+  color: var(--grey-mid);
+  transition: color var(--transition);
 }
 .patient-page .input-area .icon:hover,
 .patient-page .input-area .icon:focus {
-  color:var(--text-dark);
+  color: var(--text-dark);
 }
 .patient-page .input-area input {
-  flex:1;
-  padding:0.5rem 1rem;
-  border:1px solid var(--grey-mid);
-  border-radius:1.25rem;
+  flex: 1;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--grey-mid);
+  border-radius: 1.25rem;
 }
 .patient-page .input-area .send {
-  font-size:1.5rem;
-  color:var(--sidebar-bg);
-  transition:color var(--transition);
+  font-size: 1.5rem;
+  color: var(--sidebar-bg);
+  transition: color var(--transition);
 }
 .patient-page .input-area .send:hover,
 .patient-page .input-area .send:focus {
-  color:var(--primary);
+  color: var(--primary);
 }
 
 /* ─── RESPONSIVE ─────────────────────────────────────────────────────────── */
-@media(max-width:1024px){:root{--chatlist-width:250px;}}
-@media(max-width:768px){.patient-page .chat-list{display:none;}.patient-page .sidebar{width:60px;}.patient-page .profile h2{display:none;}.patient-page .app{flex-direction:column;height:auto;}}
-
-
+@media (max-width: 1024px) {
+  :root {
+    --chatlist-width: 250px;
+  }
+}
+@media (max-width: 768px) {
+  .patient-page .chat-list {
+    display: none;
+  }
+  .patient-page .sidebar {
+    width: 60px;
+  }
+  .patient-page .profile h2 {
+    display: none;
+  }
+  .patient-page .app {
+    flex-direction: column;
+    height: auto;
+  }
+}
 
 /*────────────────────────────────────────────────────────────────────────────
   RESET (scoped to doctor-page)
@@ -3033,10 +3570,10 @@ section div:last-of-type p {
   transition: background 0.2s;
 }
 .doctor-page .sidebar button:hover {
-  background: rgba(255,255,255,0.2);
+  background: rgba(255, 255, 255, 0.2);
 }
 .doctor-page .sidebar button.active {
-  background: rgba(255,255,255,0.3);
+  background: rgba(255, 255, 255, 0.3);
 }
 
 /*────────────────────────────────────────────────────────────────────────────
@@ -3254,3 +3791,97 @@ section div:last-of-type p {
 .doctor-page .chat-window .input-area .send:hover {
   color: #000;
 }
+
+
+/*===== DOCTOR VIDEO CONSULTATION =====*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f9;
+  color: #333;
+}
+
+/* ===== Sidebar ===== */
+.icons {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100%;
+  background-color: #e53935;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  justify-content: space-between;
+  border-top-right-radius: 30px;
+}
+
+/* ===== Logo Styling ===== */
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.logo img {
+  width: 90px;
+  height: auto;
+}
+
+/* ===== Top and Bottom Icon Groups ===== */
+.top-icons,
+.bottom-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+/* ===== Sidebar Icon Images ===== */
+.icons a img {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+/* ===== Hover Effect ===== */
+.icons img:hover {
+  transform: scale(1.1);
+}
+
+.main-content {
+  margin-left: 100px;
+  padding: 20px;
+  height: 100vh;
+  background-color: #f4f6f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Join button */
+.join-meet-btn {
+  background-color: #e53935;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.join-meet-btn:hover {
+  background-color: #b71c1c;
+}
+
+
+

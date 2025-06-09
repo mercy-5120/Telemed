@@ -1,88 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Doctor-Messages</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body  class="doctor-page">
-    
- 
-  <div class="app">
-    <!-- Sidebar -->
-    <div class="sidebar">
-      <img src="images\logo.png" alt="Logo" style="width: 50px; height: 50px;">
-      <button class="active"><img src="icons/home.png" alt="Home"></button>
-      <button><img src="icons\appointments.png" alt="appointment"></button>
-      <button><img src="icons\message.png" alt="messages"></button>
-      <button><img src="icons\records.png" alt="Folder"></button>
-      <button><img src="icons/settings.png" alt="Settings"></button>
-      <button><img src="icons/logout.png" alt="Logout"></button>
-    </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Telecure Dashboard</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="images/logo.png" type="image/x-icon" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container-dash-patient">
+       <div class="menu-container-doc">
+        <div class="sidebar-doc">
+          <img src="images/logo.png" class="logo-dash" alt="Logo" />
+          <a href="doctorHome.html"
+            ><img src="icons/home.png" alt="Home" class="icon" /> Home</a
+          >
+          <a href="doctor_appointment.html"
+            ><img
+              src="icons/appointments.png"
+              alt="Appointments"
+              class="icon"
+            />
+            Appointments</a
+          >
+          <a href="#"
+            ><img src="icons/records.png" alt="Medical Records" class="icon" />
+            Medical Records</a
+          >
+          <a href="DoctorMesseges.html"
+            ><img src="icons/message.png" alt="Messages" class="icon" />
+            Messages</a
+          >
+          <a href="doctor_dash_settings.html"
+            ><img src="icons/settings.png" alt="Settings" class="icon" />
+            Settings</a
+          >
+          <a href="#"
+            ><img src="icons/logout.png" alt="Log out" class="icon" /> Log
+            out</a
+          >
+        </div>
+      </div>
 
-    <!-- Chat View -->
-    <div class="chat-view">
-      <!-- Header -->
-      <div class="header">
+
+      <div class="messages">
+        <!-- SEARCH + ADD -->
+        <div class="chat-list">
+          <div class="search-add">
+            <input type="text" placeholder="Search messages.." />
+            <div class="add-2">+</div>
+          </div>
+
+          <div class="chat-entry-seen">
+            <img
+              src="https://ui-avatars.com/api/?name=Joe+Doe"
+              class="avatar"
+              alt=""
+            />
+            <div class="text">
+              <strong>Mary Doe</strong>
+              <small>Remember to book your appointment for y...</small>
+            </div>
+            <time>4 min</time>
+          </div>
+          <div class="chat-entry-seen-over">
+            <img
+              src="https://ui-avatars.com/api/?name=Joe+Doe"
+              class="avatar"
+              alt=""
+            />
+            <div class="text">
+              <strong>Mary Doe</strong>
+              <small>Remember to book your appointment for y...</small>
+            </div>
+            <time>4 min</time>
+          </div>
+          <!-- repeat .chat-entry blocks here -->
+        </div>
+      </div>
+ <div class="chat-window">
+  <div class="header">
         <div class="profile">
-          <img src="icons/user.png" alt="Profile">
-          <div>
-            <h2>Dr John Doe</h2>
+          <img src="https://ui-avatars.com/api/?name=Joe+Doe" alt="Profile">
+          <div class="text-box">
+            <h2>Mary Doe</h2>
             <small>Active now</small>
           </div>
         </div>
         <div class="actions">
-          <button><img src="icons\phone-call.png" alt="phone-call"style= "width: 25px; height: 25px;"></button>
-           <button><img src="icons\video-call.png" alt="video-call"style= "width: 25px; height: 25px;"></button>
-         <button><img src="icons\menu.png" alt="menu"style= "width: 25px; height: 25px;"></button>
+          <button><img src="icons\phone-call.png" alt="phone-call"></button>
+          <button><img src="icons\video-call.png" alt="video-call"></button>
+          <button><img src="icons\menu.png" alt="menu"></button>
         </div>
       </div>
 
-      <!-- Chat Body -->
-      <div class="messages-area">
-        <!-- Chat List -->
-        <div class="chat-list">
-          <div class="search-add">
-            <input type="text" placeholder="Search messages..">
-            <div class="add">+</div>
-          </div>
-          <div class="chat-entry selected">
-            <img src="icons/user.png" alt="Dr John Doe">
-            <div>
-              <strong>Mary Doe</strong>
-              <small>Remember to book your appointment for y ...</small>
+          <div class="messages-area">
+            <div class="message received">
+              Remember to book your appointment for your skin to be checked
             </div>
-            <time>4 min</time>
-          </div>
-          <!-- Duplicate entries for design -->
-          <div class="chat-entry">
-            <img src="icons/user.png" alt="Dr John Doe">
-            <div>
-              <strong>Dr John Doe</strong>
-              <small>Remember to book your appointment for y ...</small>
+            <div class="message-sent">
+              Thank you for the reminder!
             </div>
-            <time>Yesterday</time>
-          </div>
-          
-        </div>
-
-        <!-- Chat Window -->
-        <div class="chat-window">
-          <div class="messages">
-            <div class="message received">Remember to book your appointment for your skin to be checked</div>
-            <div class="message sent">Thank you for the reminder!</div>
           </div>
           <div class="input-area">
-            <button><img src="icons\attach.png" alt="attach" style= "width: 25px; height: 25px;"></button>
-            <button><img src="icons\voice.png" alt="voice note" style= "width: 25px; height: 25px;"></button>
-            <button><img src="icons\emoji.png" alt="emoji" style= "width: 25px; height: 25px;"></button>
+            <button ><img src="icons\attach.png" alt="attach" ></button>
+            <button><img src="icons\voice.png" alt="voice note" ></button>
+            <button><img src="icons\emoji.png" alt="emoji" ></button>
             <input type="text" placeholder="Type something ..">
-            <button><img src="icons\message-doc.png" alt="message" style= "width: 25px; height: 25px;"></button>
+            <button><img src="icons/message-doc.png" alt="message" ></button>
           </div>
         </div>
-      </div>
+
+      </div> 
+
     </div>
-  </div>
-</body>
+  </body>
 </html>
