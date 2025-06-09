@@ -178,7 +178,7 @@ nav ul li .navlinks:hover::after {
 .about-section .about-img {
   width: 40%;
   height: auto;
-  background-image: url("images/about.jpg");
+  background-image: url("images/about.png");
   background-size: cover;
   background-position: center;
 }
@@ -923,7 +923,7 @@ button:hover {
 .login-card .login-image {
   width: 150px;
   height: 150px;
-  background-image: url("images/doctor_login.png");
+  background-image: url("images/doctor_form.png");
   background-size: cover;
   background-position: center;
   border-radius: 10px;
@@ -1039,7 +1039,7 @@ button:hover {
 .register-card .register-image {
   width: 100px;
   height: 100px;
-  background-image: url("images/doctor_login.png");
+  background-image: url("images/doctor_form.png");
   background-size: cover;
   background-position: center;
   border-radius: 10px;
@@ -2184,7 +2184,7 @@ form {
   .about-section .about-img {
     width: 100%;
     height: auto;
-    background-image: url("images/about.jpg");
+    background-image: url("images/about.png");
     background-size: cover;
     background-position: center;
     border-radius: 20px;
@@ -2214,7 +2214,7 @@ form {
   .cont-img {
     width: 100%;
     height: 300px;
-    background-image: url("images/contact.jpg");
+    background-image: url("images/contact.png");
     background-size: cover;
     background-position: center;
     border-radius: 20px;
@@ -2291,7 +2291,7 @@ form {
   .login-card .login-image {
     width: 100px;
     height: 100px;
-    background-image: url("images/doctor_login.png");
+    background-image: url("images/doctor_form.png");
     background-size: cover;
     background-position: center;
     border-radius: 10px;
@@ -2444,7 +2444,7 @@ form {
   .about-section .about-img {
     width: 100%;
     height: auto;
-    background-image: url("images/about.jpg");
+    background-image: url("images/about.png");
     background-size: cover;
     background-position: center;
     border-radius: 20px;
@@ -2513,7 +2513,7 @@ form {
   .cont-img {
     width: 100%;
     height: 300px;
-    background-image: url("images/contact.jpg");
+    background-image: url("images/contact.png");
     background-size: cover;
     background-position: center;
     border-radius: 20px;
@@ -2618,7 +2618,7 @@ form {
   .login-card .login-image {
     width: 80px;
     height: 80px;
-    background-image: url("images/doctor_login.png");
+    background-image: url("images/doctor_form.png");
     background-size: cover;
     background-position: center;
     border-radius: 10px;
@@ -3484,3 +3484,97 @@ section div:last-of-type p {
 .doctor-page .chat-window .input-area .send:hover {
   color: #000;
 }
+
+
+/*===== DOCTOR VIDEO CONSULTATION =====*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f9;
+  color: #333;
+}
+
+/* ===== Sidebar ===== */
+.icons {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100%;
+  background-color: #e53935;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  justify-content: space-between;
+  border-top-right-radius: 30px;
+}
+
+/* ===== Logo Styling ===== */
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.logo img {
+  width: 90px;
+  height: auto;
+}
+
+/* ===== Top and Bottom Icon Groups ===== */
+.top-icons,
+.bottom-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+/* ===== Sidebar Icon Images ===== */
+.icons a img {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+/* ===== Hover Effect ===== */
+.icons img:hover {
+  transform: scale(1.1);
+}
+
+.main-content {
+  margin-left: 100px;
+  padding: 20px;
+  height: 100vh;
+  background-color: #f4f6f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Join button */
+.join-meet-btn {
+  background-color: #e53935;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.join-meet-btn:hover {
+  background-color: #b71c1c;
+}
+
+
+
