@@ -27,3 +27,19 @@ document.querySelectorAll(".navlinks").forEach((link) => {
     }
   });
 });
+
+function startMeeting() {
+  const domain = "meet.jit.si";
+  const options = {
+    roomName: "DrJohnDoeConsultationRoom2025", // Must be unique
+    width: "100%",
+    height: 600,
+    parentNode: document.querySelector('#jitsi-container'),
+    userInfo: {
+      displayName: "Dr. John Doe"
+    }
+  };
+
+  const api = new JitsiMeetExternalAPI(domain, options);
+}
+

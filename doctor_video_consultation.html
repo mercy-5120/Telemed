@@ -3,34 +3,33 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DoctorDash - Appointments</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>DoctorDash - Video Consultation</title>
+    <link rel="stylesheet" href="styles.css" />
     <link rel="icon" href="images/logo.png" />
+    <script src="https://meet.jit.si/external_api.js"></script>
 </head>
 <body>
-
-
-<div class="icons">
-    <div class ="logo" >
-        <img src="images/logo.png" alt="Telecure Logo"/>
+<div class="main-layout">
+    <!-- Sidebar -->
+    <div class="menu-container-doc">
+        <div class="sidebar-doc">
+            <img src="images/logo.png" class="logo-dash" alt="Logo" />
+            <a href="doctorHome.html"><img src="icons/home.png" alt="Home" class="icon" /> Home</a>
+            <a href="doctor_appointment.html"><img src="icons/appointments.png" alt="Appointments" class="icon" /> Appointments</a>
+            <a href="#"><img src="icons/records.png" alt="Medical Records" class="icon" /> Medical Records</a>
+            <a href="DoctorMesseges.html"><img src="icons/message.png" alt="Messages" class="icon" /> Messages</a>
+            <a href="doctor_dash_settings.html"><img src="icons/settings.png" alt="Settings" class="icon" /> Settings</a>
+            <a href="doctor_login.html"><img src="icons/logout.png" alt="Log out" class="icon" /> Log out</a>
+        </div>
     </div>
-    <div class="top-icons">
-        <a href="home.html"><img src="icons/home.png" alt="Home Logo"></a>
-        <a href="doctor_appointment.html"><img src="icons/appointments.png" alt="Appointments Logo"></a>
-        <a href="DoctorMesseges.html"><img src="icons/message.png" alt="Message Logo"></a>
-        <a href="records.html"><img src="icons/records.png" alt="Records Logo"></a>
-        <a href="doctor_dash_settings.html"><img src="icons/settings.png" alt="Settings Logo"></a>
-    </div>
-    <div class="bottom-icon">
-        <a href="doctor_login.html"><img src="icons/logout.png" alt="Logout Logo"></a>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <button onclick="startMeeting()" class="video-btn">Start Video Consultation</button>
+        <div id="jitsi-container"></div>
     </div>
 </div>
 
-<main class="main-content">
-    <button class="join-meet-btn" onclick="window.open('https://meet.google.com/peq-fqfk-ucd', '_blank')">
-        Join Google Meet
-    </button>
-</main>
-
+<script src="script.js"></script>
 </body>
 </html>
