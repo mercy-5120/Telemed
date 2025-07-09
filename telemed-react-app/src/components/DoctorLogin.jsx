@@ -1,13 +1,33 @@
+// src/components/DoctorLogin.jsx
+
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { doctors } from "../data";
 
 export default function DoctorLogin() {
   const navigate = useNavigate();
+  const [formData, setFormData] = useState({ email: "", password: "" });
 
-  function handleSubmit(e) {
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Doctor login form submitted");
-    navigate("/doctor"); // Redirect to doctor dashboard or home page
-  }
+    const foundDoctor = doctors.find(
+      (doc) =>
+        doc.email === formData.email && doc.password === formData.password
+    );
+
+    if (foundDoctor) {
+      localStorage.setItem("loggedInDoctor", JSON.stringify(foundDoctor));
+      alert("Login successful!");
+      navigate("/doctor");
+    } else {
+      alert("Invalid credentials. Please try again.");
+    }
+  };
 
   return (
     <div className="background1">
@@ -24,8 +44,22 @@ export default function DoctorLogin() {
         <h2>ENTER YOUR CREDENTIALS</h2>
 
         <form onSubmit={handleSubmit}>
-          <input type="email" placeholder="Email" name="email" />
-          <input type="password" placeholder="Password" name="password" />
+          <input
+            type="email"
+            placeholder="Email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            name="password"
+            value={formData.password}
+            onChange={handleChange}
+            required
+          />
 
           <div className="options">
             <label>

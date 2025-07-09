@@ -1,19 +1,31 @@
 // src/components/BookAppointment.jsx
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { doctors } from "../../data";
 
 export default function BookAppointment() {
   const { id } = useParams();
   const navigate = useNavigate();
+
   const doctor = doctors.find((doc) => doc.id === parseInt(id));
+  const [loggedInPatient, setLoggedInPatient] = useState(null);
 
   const [formData, setFormData] = useState({
     date: "",
     time: "",
     method: "Virtual",
   });
+
+  useEffect(() => {
+    const patient = JSON.parse(localStorage.getItem("loggedInPatient"));
+    if (!patient) {
+      alert("You must be logged in as a patient to book an appointment.");
+      navigate("/login");
+    } else {
+      setLoggedInPatient(patient);
+    }
+  }, [navigate]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -24,12 +36,16 @@ export default function BookAppointment() {
     e.preventDefault();
 
     const newAppointment = {
+      id: Date.now(), // unique ID
+      doctorId: doctor.id,
+      patientId: loggedInPatient?.id,
+      patient: `${loggedInPatient.first_name} ${loggedInPatient.last_name}`,
       doctor: `Dr. ${doctor.first_name} ${doctor.last_name}`,
       date: formData.date,
       time: formData.time,
       specialty: doctor.specialization,
       location: formData.method === "Virtual" ? "Virtual" : doctor.hospital,
-      status: "Booked",
+      status: "pending", // default status
     };
 
     const existingAppointments =

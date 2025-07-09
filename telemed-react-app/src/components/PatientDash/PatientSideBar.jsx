@@ -24,11 +24,6 @@ export default function PatientSidebar() {
           Appointments
         </Link>
 
-        <Link to="/patient/records">
-          <FaBookMedical className="side-pat-icon" />
-          Medical Records
-        </Link>
-
         <Link to="/patient/messages">
           <MdMessage className="side-pat-icon" />
           Messages

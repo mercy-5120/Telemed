@@ -6,26 +6,23 @@ import { mockPatient } from "../../data";
 import { useNavigate } from "react-router-dom";
 
 export default function PatientHome() {
-  const age =
-    new Date().getFullYear() - new Date(mockPatient.dob).getFullYear();
+  const patient = mockPatient[0] || {}; // ✅ Safely extract first patient
+  const age = new Date().getFullYear() - new Date(patient.dob).getFullYear();
 
   const navigate = useNavigate();
   const [appointments, setAppointments] = useState([]);
 
-  // Load appointments from localStorage
   useEffect(() => {
     const stored = JSON.parse(localStorage.getItem("appointments")) || [];
     setAppointments(stored);
   }, []);
 
-  // Handle appointment cancel
   const handleCancel = (index) => {
     const updatedAppointments = appointments.filter((_, i) => i !== index);
     setAppointments(updatedAppointments);
     localStorage.setItem("appointments", JSON.stringify(updatedAppointments));
   };
 
-  // Handle appointment reschedule
   const handleReschedule = (index) => {
     const newDate = prompt("Enter new date (e.g., 2025-08-01):");
     const newTime = prompt("Enter new time (e.g., 10:00 AM):");
@@ -70,12 +67,12 @@ export default function PatientHome() {
           <div className="profile-section">
             <div className="card-dash">
               <img
-                src={`https://ui-avatars.com/api/?name=${mockPatient.first_name}+${mockPatient.last_name}`}
+                src={`https://ui-avatars.com/api/?name=${patient.first_name}+${patient.last_name}`}
                 alt="Patient Avatar"
                 className="profile-card"
               />
               <p>
-                {mockPatient.first_name} {mockPatient.last_name}
+                {patient.first_name} {patient.last_name}
                 <br />
                 Age: {age}
               </p>
@@ -85,19 +82,18 @@ export default function PatientHome() {
             <div className="card">
               <h3>Basic Info</h3>
               <p>
-                <span className="info-label">Gender:</span> {mockPatient.gender}
+                <span className="info-label">Gender:</span> {patient.gender}
               </p>
               <p>
                 <span className="info-label">Bloodtype:</span>{" "}
-                {mockPatient.blood_type}
+                {patient.blood_type}
               </p>
               <p>
                 <span className="info-label">Allergies:</span>{" "}
-                {mockPatient.allergies}
+                {patient.allergies}
               </p>
               <p>
-                <span className="info-label">Diseases:</span>{" "}
-                {mockPatient.diseases}
+                <span className="info-label">Diseases:</span> {patient.diseases}
               </p>
               <p>
                 <span className="info-label">Height:</span> 1.78m
@@ -106,7 +102,7 @@ export default function PatientHome() {
                 <span className="info-label">Weight:</span> 76 kg
               </p>
               <p>
-                <span className="info-label">Patient ID:</span> {mockPatient.id}
+                <span className="info-label">Patient ID:</span> {patient.id}
               </p>
               <p>
                 <span className="info-label">Last Visit:</span> 25th October
