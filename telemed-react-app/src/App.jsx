@@ -17,6 +17,7 @@ import PatientMessages from "./components/PatientDash/PatientMessages";
 import AppointmentsPage from "./components/Appointments";
 import BookAppointment from "./components/PatientDash/BookAppointment";
 import JitsiMeeting from "./components/PatientDash/JitsiMeeting";
+import DoctorAppointment from "./components/DoctorDash/DocAppointments";
 
 function App() {
   return (
@@ -29,6 +30,8 @@ function App() {
         <Route path="/doctor-registration" element={<DoctorRegistration />} />
         <Route path="/doctor" element={<DoctorDashboardLayout />}>
           <Route index element={<DoctorHome />} />
+
+          <Route path="appointments" element={<DoctorAppointment />} />
           <Route path="messages" element={<DoctorMessages />} />
           <Route path="settings" element={<DoctorSettings />}></Route>
         </Route>

@@ -31,16 +31,6 @@ export default function SideBar() {
       </NavLink>
 
       <NavLink
-        to="/doctor/records"
-        className={({ isActive }) =>
-          isActive ? "side-doc-icons active" : "side-doc-icons"
-        }
-      >
-        <FaFileAlt className="side-doc-icon" />
-        <span className="nav-label">Records</span>
-      </NavLink>
-
-      <NavLink
         to="/doctor/messages"
         className={({ isActive }) =>
           isActive ? "side-doc-icons active" : "side-doc-icons"

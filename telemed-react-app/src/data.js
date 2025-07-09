@@ -1,27 +1,29 @@
 // src/data.js
-export const mockPatient = {
-  id: 1,
-  first_name: "James",
-  last_name: " Wamaitha",
-  email: "JamesWamiatha@gmail.com",
-  password: "telecure123",
-  phone: "0712345678",
-  nationality: "Kenyan",
-  emergency_contact_name: "Patrick Mulwa",
-  emergency_phone: "0712345678",
-  dob: "1983-01-01",
-  gender: "Female",
-  address: "Nairobi, Kenya",
-  blood_type: "O+",
-  allergies: "None",
-  diseases: "None",
-  card: {
-    name: "James Wamaitha",
-    number: "XXXX XXXX XXXX 3456",
-    expiry: "12/25",
-    cvv: "256",
+export const mockPatient = [
+  {
+    id: 1,
+    first_name: "James",
+    last_name: " Wamaitha",
+    email: "JamesWamiatha@gmail.com",
+    password: "telecure123",
+    phone: "0712345678",
+    nationality: "Kenyan",
+    emergency_contact_name: "Patrick Mulwa",
+    emergency_phone: "0712345678",
+    dob: "1983-01-01",
+    gender: "Female",
+    address: "Nairobi, Kenya",
+    blood_type: "O+",
+    allergies: "None",
+    diseases: "None",
+    card: {
+      name: "James Wamaitha",
+      number: "XXXX XXXX XXXX 3456",
+      expiry: "12/25",
+      cvv: "256",
+    },
   },
-};
+];
 
 // src/doctorData.js
 
@@ -32,6 +34,7 @@ export const doctors = [
     last_name: "Doe",
     avatar: "https://ui-avatars.com/api/?name=Joe+Doe",
     email: "joedoe@gmail.com",
+    password: "telecure123",
     phone: "0712345678",
     nationality: "Kenyan",
     dob: "1983-01-01",
@@ -64,6 +67,7 @@ export const doctors = [
     avatar: "https://ui-avatars.com/api/?name=Grace+Mutiso",
     email: "grace.mutiso@gmail.com",
     phone: "0700123456",
+    password: "telecure123",
     nationality: "Kenyan",
     dob: "1985-06-15",
     gender: "Female",
@@ -93,7 +97,8 @@ export const doctors = [
     first_name: "David",
     last_name: "Otieno",
     avatar: "https://ui-avatars.com/api/?name=David+Otieno",
-    email: "david.otieno@gmail.com",
+    email: "davidotieno@gmail.com",
+    password: "telecure123",
     phone: "0722334455",
     nationality: "Kenyan",
     dob: "1978-04-10",

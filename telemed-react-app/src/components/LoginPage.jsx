@@ -1,12 +1,34 @@
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { mockPatient } from "../data"; //
 
 export default function LoginPage() {
   const navigate = useNavigate();
 
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
   function handleLoginClick(e) {
     e.preventDefault();
-    // TODO: Replace with your authentication logic
-    navigate("/patient"); // redirect to dashboard after "login"
+
+    const matched = mockPatient.find(
+      (p) => p.email === formData.email && p.password === formData.password
+    );
+
+    if (matched) {
+      localStorage.setItem("loggedInPatient", JSON.stringify(matched));
+      alert("Login successful!");
+      navigate("/patient");
+    } else {
+      alert("Invalid email or password.");
+    }
   }
 
   return (
@@ -18,12 +40,26 @@ export default function LoginPage() {
 
             <label htmlFor="email">Email Address:</label>
             <br />
-            <input type="email" id="email" name="email" />
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
             <br />
 
             <label htmlFor="password">Password:</label>
             <br />
-            <input type="password" id="password" name="password" />
+            <input
+              type="password"
+              id="password"
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
+              required
+            />
             <br />
 
             <div className="options-row">
