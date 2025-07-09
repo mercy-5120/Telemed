@@ -5,29 +5,37 @@ import { FaFileAlt, FaMoneyBill } from "react-icons/fa";
 
 export default function DoctorDashboard() {
   const [appointments, setAppointments] = useState([]);
-  const [doctor, setDoctor] = useState(null); // Store the whole doctor object
+  const [doctor, setDoctor] = useState(null);
   const [doctorName, setDoctorName] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Load appointments
     const storedAppointments =
       JSON.parse(localStorage.getItem("appointments")) || [];
     setAppointments(storedAppointments);
 
-    // Load doctor from localStorage
     const storedDoctor = JSON.parse(localStorage.getItem("loggedInDoctor"));
     if (storedDoctor) {
-      setDoctor(storedDoctor); // Save the full doctor object
-      setDoctorName(storedDoctor.name || storedDoctor.first_name); // Optional
+      setDoctor(storedDoctor);
+      setDoctorName(storedDoctor.name || storedDoctor.first_name);
     }
   }, []);
 
   const calculateTotalIncome = () => {
     if (!doctor || !doctor.fee) return 0;
-
-    const fee = parseInt(doctor.fee.replace("KES", "").trim(), 10); // Remove "KES"
+    const fee = parseInt(doctor.fee.replace("KES", "").trim(), 10);
     return appointments.length * fee;
+  };
+
+  const handleCancel = (index) => {
+    const confirmed = window.confirm(
+      "Are you sure you want to cancel this appointment?"
+    );
+    if (!confirmed) return;
+
+    const updatedAppointments = appointments.filter((_, i) => i !== index);
+    setAppointments(updatedAppointments);
+    localStorage.setItem("appointments", JSON.stringify(updatedAppointments));
   };
 
   return (
@@ -38,18 +46,21 @@ export default function DoctorDashboard() {
 
         <div className="summary-cards">
           <div>
+            <FaCircleUser className="summary-icon" />
             <h3>{appointments.length}</h3>
-            <FaCircleUser />
+
             <p>Total patients</p>
           </div>
           <div>
+            <FaFileAlt className="summary-icon" />
             <h3>{appointments.length}</h3>
-            <FaFileAlt />
+
             <p>Total appointments</p>
           </div>
           <div>
+            <FaMoneyBill className="summary-icon" />
             <h3>${calculateTotalIncome().toLocaleString()}</h3>
-            <FaMoneyBill />
+
             <p>Total income</p>
           </div>
         </div>
@@ -78,9 +89,18 @@ export default function DoctorDashboard() {
                   <td>{appointment.time}</td>
                   <td>{appointment.location}</td>
                   <td className="table-actions">
-                    <button>Join</button>
-                    <button>Reschedule</button>
-                    <button>Cancel</button>
+                    <button
+                      onClick={() =>
+                        navigate(
+                          `/doctor/join/${
+                            appointment.roomName || "consult-room"
+                          }`
+                        )
+                      }
+                    >
+                      Join
+                    </button>
+                    <button onClick={() => handleCancel(index)}>Cancel</button>
                   </td>
                 </tr>
               ))}
