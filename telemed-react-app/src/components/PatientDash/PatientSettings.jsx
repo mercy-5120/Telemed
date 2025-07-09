@@ -1,4 +1,5 @@
 import React from "react";
+import { mockPatient } from "../../data";
 
 export default function PatientSettings() {
   return (
@@ -17,10 +18,10 @@ export default function PatientSettings() {
         <div className="update-profile_sett">
           <div className="prof">
             <img
-              src="https://ui-avatars.com/api/?name=Mary+Doe"
-              alt="Mary Doe Avatar"
+              src={`https://ui-avatars.com/api/?name=${mockPatient.first_name}+${mockPatient.last_name}`}
+              alt="Patient Avatar"
             />
-            <p id="pat-name">Mary Doe</p>
+            <p id="pat-name">{`${mockPatient.first_name} ${mockPatient.last_name}`}</p>
           </div>
           <button className="update_profile-btn">Update Profile</button>
         </div>
@@ -34,7 +35,7 @@ export default function PatientSettings() {
               <input
                 type="text"
                 id="first-name"
-                value="Mary"
+                value={mockPatient.first_name}
                 disabled
                 required
               />
@@ -43,7 +44,7 @@ export default function PatientSettings() {
               <input
                 type="email"
                 id="Email"
-                value="Marydoe@gmail.com"
+                value={mockPatient.email}
                 disabled
                 required
               />
@@ -52,7 +53,7 @@ export default function PatientSettings() {
               <input
                 type="tel"
                 id="phone"
-                value="0712345678"
+                value={mockPatient.phone}
                 disabled
                 required
               />
@@ -61,7 +62,7 @@ export default function PatientSettings() {
               <input
                 type="text"
                 id="nationality"
-                value="Kenyan"
+                value={mockPatient.nationality}
                 disabled
                 required
               />
@@ -70,7 +71,7 @@ export default function PatientSettings() {
               <input
                 type="text"
                 id="emergency-name"
-                value="Patrick Doe"
+                value={mockPatient.emergency_contact_name}
                 disabled
                 required
               />
@@ -82,23 +83,27 @@ export default function PatientSettings() {
 
             <div className="basic">
               <label htmlFor="last-name">Last Name</label>
-              <input type="text" id="last-name" value="Doe" disabled required />
+              <input
+                type="text"
+                id="last-name"
+                value={mockPatient.last_name}
+                disabled
+                required
+              />
 
               <label htmlFor="DOB">Date of Birth</label>
               <input
                 type="date"
                 id="DOB"
-                value="1983-01-01"
+                value={mockPatient.dob}
                 disabled
                 required
               />
 
               <label htmlFor="Gender">Gender</label>
-              <select id="Gender" disabled>
+              <select id="Gender" value={mockPatient.gender} disabled>
                 <option value="Male">Male</option>
-                <option value="Female" selected>
-                  Female
-                </option>
+                <option value="Female">Female</option>
                 <option value="Other">Other</option>
               </select>
 
@@ -106,7 +111,7 @@ export default function PatientSettings() {
               <input
                 type="text"
                 id="address"
-                value="Nairobi,Kenya"
+                value={mockPatient.address}
                 disabled
                 required
               />
@@ -115,7 +120,7 @@ export default function PatientSettings() {
               <input
                 type="tel"
                 id="emergency-phone"
-                value="0712345678"
+                value={mockPatient.emergency_phone}
                 disabled
                 required
               />
@@ -132,13 +137,31 @@ export default function PatientSettings() {
           <h4>Medical Information</h4>
           <form id="medical-info-form">
             <label htmlFor="blood-type">Blood Type</label>
-            <input type="text" id="blood-type" value="O+" disabled required />
+            <input
+              type="text"
+              id="blood-type"
+              value={mockPatient.blood_type}
+              disabled
+              required
+            />
 
             <label htmlFor="allergies">Allergies</label>
-            <input type="text" id="allergies" value="None" disabled required />
+            <input
+              type="text"
+              id="allergies"
+              value={mockPatient.allergies}
+              disabled
+              required
+            />
 
             <label htmlFor="conditions">Chronic Conditions</label>
-            <input type="text" id="conditions" value="None" disabled required />
+            <input
+              type="text"
+              id="conditions"
+              value={mockPatient.diseases}
+              disabled
+              required
+            />
 
             <button className="update-medical-btn" type="submit">
               Update
@@ -159,7 +182,7 @@ export default function PatientSettings() {
                 <input
                   type="text"
                   id="card-holder"
-                  value="Mary Doe"
+                  value={mockPatient.card.name}
                   disabled
                   required
                 />
@@ -168,7 +191,7 @@ export default function PatientSettings() {
                 <input
                   type="text"
                   id="expiry-date"
-                  value="12/25"
+                  value={mockPatient.card.expiry}
                   disabled
                   required
                 />
@@ -179,13 +202,19 @@ export default function PatientSettings() {
                 <input
                   type="text"
                   id="card-number"
-                  value="XXXX XXXX XXXX 3456"
+                  value={mockPatient.card.number}
                   disabled
                   required
                 />
 
                 <label htmlFor="cvv">CVV</label>
-                <input type="text" id="cvv" value="256" disabled required />
+                <input
+                  type="text"
+                  id="cvv"
+                  value={mockPatient.card.cvv}
+                  disabled
+                  required
+                />
               </div>
 
               <button className="update-payment-btn" type="submit">

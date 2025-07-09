@@ -14,6 +14,9 @@ import PatientDashboardLayout from "./components/PatientDashLayout";
 import PatientSettings from "./components/PatientDash/PatientSettings";
 import PatientHome from "./components/PatientDash/PatientHome";
 import PatientMessages from "./components/PatientDash/PatientMessages";
+import AppointmentsPage from "./components/Appointments";
+import BookAppointment from "./components/PatientDash/BookAppointment";
+import JitsiMeeting from "./components/PatientDash/JitsiMeeting";
 
 function App() {
   return (
@@ -31,8 +34,12 @@ function App() {
         </Route>
         <Route path="/patient" element={<PatientDashboardLayout />}>
           <Route index element={<PatientHome />}></Route>
+
+          <Route path="appointments" element={<AppointmentsPage />} />
           <Route path="messages" element={<PatientMessages />} />
-          <Route path="settings" element={<PatientSettings />}></Route>
+          <Route path="settings" element={<PatientSettings />} />
+          <Route path="book-appointment/:id" element={<BookAppointment />} />
+          <Route path="join/:roomName" element={<JitsiMeeting />} />
         </Route>
       </Routes>
     </Router>

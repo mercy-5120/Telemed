@@ -1613,7 +1613,7 @@ td {
   padding: 20px;
   display: flex;
   flex-direction: column;
-  margin-top: 300px;
+  margin-top: 200px;
 }
 
 .topbar {
@@ -1914,6 +1914,93 @@ td {
   padding: 10px 20px;
   border-radius: 25px;
   font-weight: bold;
+}
+
+/* Patient Appointments Page */
+.appointments-page {
+  padding: 2rem;
+  background: #f5f5f5;
+  margin-top: 900px;
+}
+
+.title {
+  font-size: 24px;
+  margin-bottom: 1.5rem;
+  margin-left: 120px;
+}
+.doctor-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 5 columns */
+  gap: 1.5rem;
+  padding: 1rem 0;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.doctor-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 350px;
+  line-height: 30px;
+}
+
+.doctor-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+.book-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  background: #007bff;
+  color: white;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+/* Patient Book form */
+.book-appointment-container {
+  max-width: 600px;
+  margin: auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 10px;
+}
+
+.appointment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.appointment-form label {
+  display: flex;
+  flex-direction: column;
+}
+.appointment-form input,
+select {
+  height: 40px;
+}
+
+.appointment-form .book-btn {
+  padding: 0.7rem 1.2rem;
+  background-color: teal;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.doctor-summary {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  gap: 10px;
 }
 
 /* Patient_Dash_Settings */
@@ -2439,52 +2526,34 @@ td {
 .action:hover {
   transform: scale(1.2);
 }
+.message-sent {
+  background-color: #ed4545;
+  color: white;
+  align-self: flex-end;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 5px 0;
+  width: fit-content;
+  max-width: 60%;
+}
+
+.message-received {
+  background-color: #3758dd;
+  color: white;
+  align-self: flex-start;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 5px 0;
+  width: fit-content;
+  max-width: 60%;
+}
 
 .messages-area {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding: 20px;
-  height: 600px;
-  overflow-y: scroll;
-  background-color: #f5f5f5;
-  justify-content: flex-end;
-  position: fixed;
-  width: 100%;
-  margin-top: -10px;
-}
-
-.message.received {
-  background-color: #f0ecec;
-
-  width: 300px;
-  padding: 10px;
-  border-radius: 10px;
-  color: #000;
-  font-weight: bold;
-  font-size: 14px;
-}
-
-.message.sent {
-  background-color: #3758dd;
-  color: white;
-  width: 300px;
-  padding: 10px;
-  border-radius: 10px;
-  font-weight: bold;
-  font-size: 14px;
-  align-self: flex-end;
-}
-
-.message-sent {
-  background-color: #ed4545;
-  color: white;
-  width: 300px;
-  padding: 10px;
-  border-radius: 10px;
-  font-weight: bold;
-  font-size: 14px;
-  align-self: flex-end;
+  padding: 1rem;
+  height: 80vh;
+  overflow-y: auto;
 }
 
 .input-area {
@@ -2526,6 +2595,12 @@ td {
   width: 50%;
   height: 45px;
   margin-top: 10px;
+}
+
+.jitsi-wrapper {
+  padding: 1rem;
+  width: 70%;
+  margin: auto;
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {

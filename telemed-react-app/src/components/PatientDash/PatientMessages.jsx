@@ -9,16 +9,64 @@ export default function PatientMessages() {
   const [messages, setMessages] = useState([
     {
       from: "Mary Doe",
-      content: "Remember to book your appointment for your skin to be checked",
+      content: "Hi, this is Dr. Mary. Hope you're doing well today.",
       type: "received",
     },
-    { from: "You", content: "Thank you for the reminder!", type: "sent" },
+    {
+      from: "You",
+      content: "Yes doctor, I’ve been feeling a bit off lately.",
+      type: "sent",
+    },
+    {
+      from: "Mary Doe",
+      content: "Can you describe your symptoms?",
+      type: "received",
+    },
   ]);
+
+  const [inputMessage, setInputMessage] = useState("");
+
+  const autoReplies = [
+    "Okay, I’ve noted that.",
+    "Let’s confirm a booking then.",
+    "Try to rest and drink water.",
+    "I’ll review your file and get back to you.",
+    "Thanks. We'll follow up soon.",
+  ];
+
+  const handleSend = () => {
+    if (inputMessage.trim() === "") return;
+
+    const newMessage = {
+      from: "You",
+      content: inputMessage,
+      type: "sent",
+    };
+
+    setMessages((prev) => [...prev, newMessage]);
+    setInputMessage("");
+
+    setTimeout(() => {
+      const reply = autoReplies[Math.floor(Math.random() * autoReplies.length)];
+
+      setMessages((prev) => [
+        ...prev,
+        {
+          from: "Mary Doe",
+          content: reply,
+          type: "received",
+        },
+      ]);
+    }, 1200);
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") handleSend();
+  };
 
   return (
     <div className="pat-mess">
-      {/* Sidebar removed; assume it's handled by layout */}
-
+      {/* Sidebar assumed to be in layout */}
       <div className="messages">
         <div className="chat-list">
           <div className="search-add">
@@ -34,22 +82,9 @@ export default function PatientMessages() {
             />
             <div className="text">
               <strong>Mary Doe</strong>
-              <small>Remember to book your appointment for y...</small>
+              <small>{messages[messages.length - 1]?.content}</small>
             </div>
-            <time>4 min</time>
-          </div>
-
-          <div className="chat-entry-seen-over">
-            <img
-              src="https://ui-avatars.com/api/?name=Mary+Doe"
-              className="avatar"
-              alt="avatar"
-            />
-            <div className="text">
-              <strong>Mary Doe</strong>
-              <small>Remember to book your appointment for y...</small>
-            </div>
-            <time>4 min</time>
+            <time>Just now</time>
           </div>
         </div>
       </div>
@@ -77,9 +112,9 @@ export default function PatientMessages() {
           {messages.map((msg, idx) => (
             <div
               key={idx}
-              className={
-                msg.type === "sent" ? "message-sent" : "message received"
-              }
+              className={`message ${
+                msg.type === "sent" ? "message-sent" : "message-received"
+              }`}
             >
               {msg.content}
             </div>
@@ -89,10 +124,15 @@ export default function PatientMessages() {
         <div className="input-area">
           <IoIosAttach className="icon-send" />
           <MdKeyboardVoice className="icon-send" />
-
           <MdEmojiEmotions className="icon-send" />
-          <input type="text" placeholder="Type something .." />
-          <button>
+          <input
+            type="text"
+            placeholder="Type something .."
+            value={inputMessage}
+            onChange={(e) => setInputMessage(e.target.value)}
+            onKeyDown={handleKeyDown}
+          />
+          <button onClick={handleSend}>
             <IoSend className="icon-send-msg" />
           </button>
         </div>

@@ -39,7 +39,7 @@ export default function PatientSidebar() {
           Settings
         </Link>
 
-        <Link to="/patient-login">
+        <Link to="/login">
           <MdLogout className="side-pat-icon" />
           Log out
         </Link>

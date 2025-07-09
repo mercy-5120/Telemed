@@ -1,9 +1,46 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { IoIosNotifications } from "react-icons/io";
 import { FaCalendar, FaHeartbeat, FaTemperatureHigh } from "react-icons/fa";
 import { MdBloodtype } from "react-icons/md";
+import { mockPatient } from "../../data";
+import { useNavigate } from "react-router-dom";
 
 export default function PatientHome() {
+  const age =
+    new Date().getFullYear() - new Date(mockPatient.dob).getFullYear();
+
+  const navigate = useNavigate();
+  const [appointments, setAppointments] = useState([]);
+
+  // Load appointments from localStorage
+  useEffect(() => {
+    const stored = JSON.parse(localStorage.getItem("appointments")) || [];
+    setAppointments(stored);
+  }, []);
+
+  // Handle appointment cancel
+  const handleCancel = (index) => {
+    const updatedAppointments = appointments.filter((_, i) => i !== index);
+    setAppointments(updatedAppointments);
+    localStorage.setItem("appointments", JSON.stringify(updatedAppointments));
+  };
+
+  // Handle appointment reschedule
+  const handleReschedule = (index) => {
+    const newDate = prompt("Enter new date (e.g., 2025-08-01):");
+    const newTime = prompt("Enter new time (e.g., 10:00 AM):");
+
+    if (!newDate || !newTime) return;
+
+    const updatedAppointments = [...appointments];
+    updatedAppointments[index].date = newDate;
+    updatedAppointments[index].time = newTime;
+    updatedAppointments[index].status = "Rescheduled";
+
+    setAppointments(updatedAppointments);
+    localStorage.setItem("appointments", JSON.stringify(updatedAppointments));
+  };
+
   return (
     <div className="patient-dash-home">
       <div className="main">
@@ -14,7 +51,12 @@ export default function PatientHome() {
             placeholder="Enter specialty or condition i.e. dermatologist"
           />
           <div className="dash-icons">
-            <button className="appointment-btn">Book an appointment</button>
+            <button
+              className="appointment-btn"
+              onClick={() => navigate("/patient/appointments")}
+            >
+              Book an appointment
+            </button>
             <a href="#">
               <IoIosNotifications className="dash-pat-icon" />
             </a>
@@ -27,11 +69,15 @@ export default function PatientHome() {
         <div className="profile-dash">
           <div className="profile-section">
             <div className="card-dash">
-              <div className="profile-card"></div>
+              <img
+                src={`https://ui-avatars.com/api/?name=${mockPatient.first_name}+${mockPatient.last_name}`}
+                alt="Patient Avatar"
+                className="profile-card"
+              />
               <p>
-                User Name
+                {mockPatient.first_name} {mockPatient.last_name}
                 <br />
-                Age: 40
+                Age: {age}
               </p>
               <button className="update">Update</button>
             </div>
@@ -39,26 +85,28 @@ export default function PatientHome() {
             <div className="card">
               <h3>Basic Info</h3>
               <p>
-                <span className="info-label">Gender:</span> Male
+                <span className="info-label">Gender:</span> {mockPatient.gender}
               </p>
               <p>
-                <span className="info-label">Bloodtype:</span> O+ (Positive)
+                <span className="info-label">Bloodtype:</span>{" "}
+                {mockPatient.blood_type}
               </p>
               <p>
-                <span className="info-label">Allergies:</span> Milk, Eggs
+                <span className="info-label">Allergies:</span>{" "}
+                {mockPatient.allergies}
               </p>
               <p>
-                <span className="info-label">Diseases:</span> Diabetes, Blood
-                Pressure
+                <span className="info-label">Diseases:</span>{" "}
+                {mockPatient.diseases}
               </p>
               <p>
-                <span className="info-label">Height:</span> 1.98m
+                <span className="info-label">Height:</span> 1.78m
               </p>
               <p>
-                <span className="info-label">Weight:</span> 89 kg
+                <span className="info-label">Weight:</span> 76 kg
               </p>
               <p>
-                <span className="info-label">Patient ID:</span> 190293893
+                <span className="info-label">Patient ID:</span> {mockPatient.id}
               </p>
               <p>
                 <span className="info-label">Last Visit:</span> 25th October
@@ -68,6 +116,7 @@ export default function PatientHome() {
           </div>
 
           <div className="section2-patient">
+            {/* Vitals */}
             <div className="vitals">
               <div className="vital-card">
                 <FaHeartbeat className="vital-icon" />
@@ -86,39 +135,64 @@ export default function PatientHome() {
               </div>
             </div>
 
+            {/* Appointments */}
             <div className="appointments">
               <h3>Upcoming Appointments</h3>
-              <div className="appointments-grid">
-                <div className="appointment-card">
-                  <div className="details">
-                    <p>
-                      <span className="label">Doctor Name:</span> John Doe
-                    </p>
-                    <p>
-                      <span className="label">Date:</span> 12/06/2025
-                    </p>
-                    <p>
-                      <span className="label">Specialty:</span> Dermatology
-                    </p>
-                    <p>
-                      <span className="label">Time:</span> 9:00 a.m
-                    </p>
-                    <p>
-                      <span className="label">Location:</span> Virtual
-                    </p>
-                    <p>
-                      <span className="label">Status:</span> Booked
-                    </p>
-                  </div>
-                  <div className="appointment-actions">
-                    <button>Join</button>
-                    <button>Reschedule</button>
-                    <button>Cancel</button>
-                  </div>
+              {appointments.length > 0 ? (
+                <div className="appointments-grid">
+                  {appointments.map((appt, index) => (
+                    <div className="appointment-card" key={index}>
+                      <div className="details">
+                        <p>
+                          <span className="label">Doctor Name:</span>{" "}
+                          {appt.doctor}
+                        </p>
+                        <p>
+                          <span className="label">Date:</span> {appt.date}
+                        </p>
+                        <p>
+                          <span className="label">Specialty:</span>{" "}
+                          {appt.specialty}
+                        </p>
+                        <p>
+                          <span className="label">Time:</span> {appt.time}
+                        </p>
+                        <p>
+                          <span className="label">Location:</span>{" "}
+                          {appt.location}
+                        </p>
+                        <p>
+                          <span className="label">Status:</span> {appt.status}
+                        </p>
+                      </div>
+                      <div className="appointment-actions">
+                        <button
+                          onClick={() =>
+                            navigate(
+                              `/patient/join/${appt.roomName || "consult-room"}`
+                            )
+                          }
+                        >
+                          Join
+                        </button>
+                        <button onClick={() => handleReschedule(index)}>
+                          Reschedule
+                        </button>
+                        <button onClick={() => handleCancel(index)}>
+                          Cancel
+                        </button>
+                      </div>
+                    </div>
+                  ))}
                 </div>
-              </div>
+              ) : (
+                <p style={{ opacity: 0.6, fontStyle: "italic" }}>
+                  You have no upcoming appointments.
+                </p>
+              )}
             </div>
 
+            {/* Tips */}
             <div className="tips">
               <h3>Health Tips</h3>
               <div className="tips-grid">
