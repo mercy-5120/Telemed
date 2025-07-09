@@ -34,6 +34,7 @@ function App() {
           <Route path="appointments" element={<DoctorAppointment />} />
           <Route path="messages" element={<DoctorMessages />} />
           <Route path="settings" element={<DoctorSettings />}></Route>
+          <Route path="join/:roomName" element={<JitsiMeeting />} />
         </Route>
         <Route path="/patient" element={<PatientDashboardLayout />}>
           <Route index element={<PatientHome />}></Route>
