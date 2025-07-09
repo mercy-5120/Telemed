@@ -9,6 +9,7 @@ export default function DoctorLogin() {
     navigate("/doctor"); // Redirect to doctor dashboard or home page
   }
 
+
   return (
     <div className="background1">
       {/* Top Right Logo */}
