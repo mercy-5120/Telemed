@@ -1,4 +1,3 @@
-// src/components/AppointmentsPage.jsx
 import React from "react";
 import { doctors } from "../data";
 import { Link } from "react-router-dom";

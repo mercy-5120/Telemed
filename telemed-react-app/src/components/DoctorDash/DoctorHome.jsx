@@ -175,7 +175,7 @@ export default function DoctorHome() {
           </div>
         </div>
 
-        {/* Recent Patients Table - You can hook this up later dynamically */}
+       
         <div className="recent-patients">
           <h3>Recent Patients</h3>
           <table>
@@ -192,7 +192,7 @@ export default function DoctorHome() {
               </tr>
             </thead>
             <tbody>
-              {/* Can be updated later from real patient data */}
+             
               {[1, 2, 3].map((_, i) => (
                 <tr key={i}>
                   <td>

@@ -77,99 +77,99 @@ export default function RegisterPage() {
   }
 
   return (
-      <div className="patient-signup">
-        <div className="container-patient">
-          {/* Image section */}
-          <div className="image-section-patient">
-            <img
-                src="/images/patient_form.png"
-                alt="Patient Form Illustration"
-                className="illustration"
+    <div className="patient-signup">
+      <div className="container-patient">
+        {/* Image section */}
+        <div className="image-section-patient">
+          <img
+            src="/images/patient_form.png"
+            alt="Patient Form Illustration"
+            className="illustration"
+          />
+        </div>
+
+        {/* Form section */}
+        <div className="form-section">
+          <img src="/images/logo.png" alt="Telecure Logo" className="logo2" />
+          <h2>Sign Up</h2>
+
+          <form onSubmit={handleSubmit}>
+            <label htmlFor="fullName">Full Name:</label>
+            <input
+              type="text"
+              id="fullName"
+              name="fullName"
+              value={formData.fullName}
+              onChange={handleChange}
             />
-          </div>
+            <div className="error-message">{errors.fullName}</div>
 
-          {/* Form section */}
-          <div className="form-section">
-            <img src="/images/logo.png" alt="Telecure Logo" className="logo2" />
-            <h2>Sign Up</h2>
-
-            <form onSubmit={handleSubmit}>
-              <label htmlFor="fullName">Full Name:</label>
-              <input
-                  type="text"
-                  id="fullName"
-                  name="fullName"
-                  value={formData.fullName}
+            <div className="email-contact-row">
+              <div>
+                <label htmlFor="email">Email Address:</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
                   onChange={handleChange}
-              />
-              <div className="error-message">{errors.fullName}</div>
-
-              <div className="email-contact-row">
-                <div>
-                  <label htmlFor="email">Email Address:</label>
-                  <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                  />
-                  <div className="error-message">{errors.email}</div>
-                </div>
-                <div>
-                  <label htmlFor="contact">Contact:</label>
-                  <input
-                      type="text"
-                      id="contact"
-                      name="contact"
-                      value={formData.contact}
-                      onChange={handleChange}
-                  />
-                  <div className="error-message">{errors.contact}</div>
-                </div>
+                />
+                <div className="error-message">{errors.email}</div>
               </div>
-
-              <div className="password-row">
-                <div className="password-field">
-                  <label htmlFor="password">Password:</label>
-                  <input
-                      type="password"
-                      id="password"
-                      name="password"
-                      value={formData.password}
-                      onChange={handleChange}
-                  />
-                  <div className="error-message">{errors.password}</div>
-                </div>
-                <div className="password-field">
-                  <label htmlFor="confirmPassword">Confirm Password:</label>
-                  <input
-                      type="password"
-                      id="confirmPassword"
-                      name="confirmPassword"
-                      value={formData.confirmPassword}
-                      onChange={handleChange}
-                  />
-                  <div className="error-message">{errors.confirmPassword}</div>
-                </div>
+              <div>
+                <label htmlFor="contact">Contact:</label>
+                <input
+                  type="text"
+                  id="contact"
+                  name="contact"
+                  value={formData.contact}
+                  onChange={handleChange}
+                />
+                <div className="error-message">{errors.contact}</div>
               </div>
-
-              <button type="submit">SIGN UP</button>
-            </form>
-
-            <p className="disclaimer">
-              By continuing, I confirm that I am over 18 years old and agree to
-              Telecure's <a href="#">Terms</a> and <a href="#">Privacy Policy</a>.
-            </p>
-
-            <div className="links">
-              Have an account?{" "}
-              <button className="link-button2" onClick={() => navigate("/login")}>
-                Login
-              </button>
             </div>
+
+            <div className="password-row">
+              <div className="password-field">
+                <label htmlFor="password">Password:</label>
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  value={formData.password}
+                  onChange={handleChange}
+                />
+                <div className="error-message">{errors.password}</div>
+              </div>
+              <div className="password-field">
+                <label htmlFor="confirmPassword">Confirm Password:</label>
+                <input
+                  type="password"
+                  id="confirmPassword"
+                  name="confirmPassword"
+                  value={formData.confirmPassword}
+                  onChange={handleChange}
+                />
+                <div className="error-message">{errors.confirmPassword}</div>
+              </div>
+            </div>
+
+            <button type="submit">SIGN UP</button>
+          </form>
+
+          <p className="disclaimer">
+            By continuing, I confirm that I am over 18 years old and agree to
+            Telecure's <a href="#">Terms</a> and <a href="#">Privacy Policy</a>.
+          </p>
+
+          <div className="links">
+            Have an account?{" "}
+            <button className="link-button2" onClick={() => navigate("/login")}>
+              Login
+            </button>
           </div>
         </div>
       </div>
+    </div>
   );
 }

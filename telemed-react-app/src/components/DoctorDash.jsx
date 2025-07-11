@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import Sidebar from "../components/DoctorDash/SideBar"; // your sidebar component
+import Sidebar from "../components/DoctorDash/SideBar"; 
 
 export default function DoctorDashboardLayout() {
   return (

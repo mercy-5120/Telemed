@@ -6,13 +6,13 @@ export default function DoctorLogin() {
   function handleSubmit(e) {
     e.preventDefault();
     console.log("Doctor login form submitted");
-    navigate("/doctor"); // Redirect to doctor dashboard or home page
+    navigate("/doctor"); 
   }
 
 
   return (
     <div className="background1">
-      {/* Top Right Logo */}
+     
       <img src="/images/logo.png" alt="Telecure Logo" className="logo-doctor" />
 
       {/* Login Card */}

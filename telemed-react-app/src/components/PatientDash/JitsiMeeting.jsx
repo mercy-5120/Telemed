@@ -1,10 +1,10 @@
-// src/components/PatientDash/JitsiMeeting.jsx
+
 import React, { useEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
 
 export default function JitsiMeeting() {
   const jitsiContainerRef = useRef(null);
-  const { roomName } = useParams(); // Get dynamic room name from URL
+  const { roomName } = useParams();
 
   useEffect(() => {
     const domain = "meet.jit.si";

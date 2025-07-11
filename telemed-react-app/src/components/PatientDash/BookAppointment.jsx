@@ -45,7 +45,7 @@ export default function BookAppointment() {
       time: formData.time,
       specialty: doctor.specialization,
       location: formData.method === "Virtual" ? "Virtual" : doctor.hospital,
-      status: "pending", // default status
+      status: "pending",
     };
 
     const existingAppointments =

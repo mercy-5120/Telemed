@@ -6,7 +6,7 @@ import { mockPatient } from "../../data";
 import { useNavigate } from "react-router-dom";
 
 export default function PatientHome() {
-  const patient = mockPatient[0] || {}; // ✅ Safely extract first patient
+  const patient = mockPatient[0] || {}; 
   const age = new Date().getFullYear() - new Date(patient.dob).getFullYear();
 
   const navigate = useNavigate();
